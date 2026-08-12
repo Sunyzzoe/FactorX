@@ -1,0 +1,8 @@
+com\factorx\model\AnalysisResponse.class
+com\factorx\model\StockImpact.class
+com\factorx\model\ExtractedEvent.class
+com\factorx\model\ReluFactor.class
+com\factorx\model\AnalysisRequest.class
+com\factorx\api\AnalysisController.class
+com\factorx\model\ReluMomentumPoint.class
+com\factorx\FactorXApplication.class
