@@ -10,6 +10,7 @@ export type ExtractedEvent = {
   country?: string;
   projectAmountUsd?: number;
   companies: string[];
+  keywords: string[];
   source: string;
   sourceCredibility: number;
 };

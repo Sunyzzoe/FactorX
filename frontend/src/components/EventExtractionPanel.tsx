@@ -22,6 +22,7 @@ export function EventExtractionPanel({ event }: EventExtractionPanelProps) {
           <Fact label="国家/地区" value={event.country || "待确认"} />
           <Fact label="项目金额" value={formatAmount(event.projectAmountUsd)} />
           <Fact label="相关公司" value={event.companies.length ? event.companies.join(", ") : "待确认"} />
+          <Fact label="命中关键词" value={event.keywords.length ? event.keywords.join(", ") : "待确认"} />
           <Fact label="新闻源可信度" value={formatPercent(event.sourceCredibility)} />
         </div>
       ) : (
