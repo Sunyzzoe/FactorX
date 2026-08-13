@@ -15,6 +15,7 @@ export const demoAnalysis: AnalysisResponse = {
     country: "Saudi Arabia",
     projectAmountUsd: 10_000_000_000,
     companies: ["Tesla", "Enphase", "SolarEdge", "Nvidia"],
+    keywords: ["solar", "battery", "energy storage", "project", "$10b", "Saudi Arabia", "Tesla"],
     source: "Reuters",
     sourceCredibility: 0.86
   },

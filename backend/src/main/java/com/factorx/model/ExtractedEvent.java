@@ -6,8 +6,9 @@ public record ExtractedEvent(
         String eventType,
         String sector,
         String country,
-        long projectAmountUsd,
+        Long projectAmountUsd,
         List<String> companies,
+        List<String> keywords,
         String source,
         double sourceCredibility
 ) {}
