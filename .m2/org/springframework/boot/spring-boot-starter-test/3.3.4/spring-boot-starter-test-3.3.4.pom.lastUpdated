@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Aug 18 00:11:16 CST 2026
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1786982884276
+https\://maven.aliyun.com/repository/public/.lastUpdated=1786983076183
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact org.springframework.boot\:spring-boot-starter-test\:pom\:3.3.4 from/to central (https\://repo.maven.apache.org/maven2)\: Permission denied\: no further information
