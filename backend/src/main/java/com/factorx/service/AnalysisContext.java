@@ -4,6 +4,7 @@ import com.factorx.model.AnalysisRequest;
 import com.factorx.model.ExtractedEvent;
 import com.factorx.model.ReluFactor;
 import com.factorx.model.ReluMomentumPoint;
+import com.factorx.model.ReluMetrics;
 import com.factorx.model.StockImpact;
 
 import java.util.List;
@@ -55,6 +56,10 @@ public class AnalysisContext {
 
     public List<ReluFactor> reluFactors() {
         return reluResult == null ? List.of() : reluResult.factors();
+    }
+
+    public ReluMetrics reluMetrics() {
+        return reluResult == null ? null : reluResult.metrics();
     }
 
     public List<StockImpact> stockImpacts() {

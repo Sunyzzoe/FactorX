@@ -43,6 +43,7 @@ public class NewsAnalysisService {
                 context.event(),
                 context.stockImpacts(),
                 context.reluMomentum(),
+                context.reluMetrics(),
                 context.reluFactors(),
                 context.explanation(),
                 context.riskNote()

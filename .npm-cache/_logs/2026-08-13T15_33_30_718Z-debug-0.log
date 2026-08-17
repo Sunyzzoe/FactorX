@@ -1,0 +1,593 @@
+0 verbose cli D:\node\node.exe D:\node\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.8.2
+2 info using node@v20.19.0
+3 silly config load:file:D:\node\node_modules\npm\npmrc
+4 silly config load:file:F:\deepseek-harness-master\.npmrc
+5 silly config load:file:C:\Users\HP\.npmrc
+6 silly config load:file:C:\Users\HP\npm-global\etc\npmrc
+7 verbose title npm exec @deepseek-ai/dsh web
+8 verbose argv "exec" "--" "@deepseek-ai/dsh" "web"
+9 verbose logfile logs-max:10 dir:e:\FactorX\.npm-cache\_logs\2026-08-13T15_33_30_718Z-
+10 verbose logfile e:\FactorX\.npm-cache\_logs\2026-08-13T15_33_30_718Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
+13 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+14 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh 149ms (cache miss)
+15 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+16 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+17 silly idealTree buildDeps
+18 silly fetch manifest @deepseek-ai/dsh@0.1.0-rc.6
+19 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh cache-miss
+20 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh 49ms (cache miss)
+21 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh set size:7429 disposed:false
+22 silly placeDep ROOT @deepseek-ai/dsh@0.1.0-rc.6 OK for:  want: 0.1.0-rc.6
+23 silly fetch manifest commander@^15.0.0
+24 silly packumentCache full:https://registry.npmmirror.com/commander cache-miss
+25 silly fetch manifest js-yaml@^4.2.0
+26 silly packumentCache full:https://registry.npmmirror.com/js-yaml cache-miss
+27 silly fetch manifest node-addon-require-builtin@^0.1.4
+28 silly packumentCache full:https://registry.npmmirror.com/node-addon-require-builtin cache-miss
+29 silly fetch manifest @deepseek-ai/cordis-plugin-hmr@^1.0.16
+30 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fcordis-plugin-hmr cache-miss
+31 silly fetch manifest @deepseek-ai/cordis-plugin-include@^1.0.6
+32 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fcordis-plugin-include cache-miss
+33 silly fetch manifest @deepseek-ai/cordis-plugin-timer@^1.1.3
+34 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fcordis-plugin-timer cache-miss
+35 silly fetch manifest @deepseek-ai/dsh-agent-tool-presentation@^0.1.0-rc.6
+36 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-agent-tool-presentation cache-miss
+37 silly fetch manifest @deepseek-ai/dsh-app-boot@^0.1.0-rc.6
+38 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-app-boot cache-miss
+39 silly fetch manifest @deepseek-ai/dsh-base@^0.1.0-rc.6
+40 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-base cache-miss
+41 silly fetch manifest @deepseek-ai/cordis-plugin-loader@^1.0.2
+42 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fcordis-plugin-loader cache-miss
+43 silly fetch manifest @deepseek-ai/dsh-cordis-client-runner@^0.1.0-rc.6
+44 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-cordis-client-runner cache-miss
+45 silly fetch manifest @deepseek-ai/dsh-client-ui-agent-preset@^0.1.0-rc.6
+46 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-agent-preset cache-miss
+47 silly fetch manifest @deepseek-ai/dsh-client-ui-cordis@^0.1.0-rc.6
+48 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-cordis cache-miss
+49 silly fetch manifest @deepseek-ai/dsh-command-compact@^0.1.0-rc.6
+50 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-command-compact cache-miss
+51 silly fetch manifest @deepseek-ai/dsh-command-goal@^0.1.0-rc.6
+52 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-command-goal cache-miss
+53 silly fetch manifest @deepseek-ai/dsh-compaction-basic@^0.1.0-rc.6
+54 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-compaction-basic cache-miss
+55 silly fetch manifest @deepseek-ai/dsh-compaction-tool-result-pruner@^0.1.0-rc.6
+56 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-compaction-tool-result-pruner cache-miss
+57 silly fetch manifest @deepseek-ai/dsh-goal@^0.1.0-rc.6
+58 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-goal cache-miss
+59 silly fetch manifest @deepseek-ai/dsh-goal-round-driver@^0.1.0-rc.6
+60 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-goal-round-driver cache-miss
+61 silly fetch manifest @deepseek-ai/dsh-cmdline@^0.1.0-rc.6
+62 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-cmdline cache-miss
+63 silly fetch manifest @deepseek-ai/dsh-launch-environment@^0.1.0-rc.6
+64 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-launch-environment cache-miss
+65 silly fetch manifest @deepseek-ai/dsh-fs-local@^0.1.0-rc.6
+66 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-fs-local cache-miss
+67 silly fetch manifest @deepseek-ai/dsh-headless@^0.1.0-rc.6
+68 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-headless cache-miss
+69 silly fetch manifest @deepseek-ai/dsh-mcp-client@^0.1.0-rc.6
+70 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-mcp-client cache-miss
+71 silly fetch manifest @deepseek-ai/dsh-home-paths@^0.1.0-rc.6
+72 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-home-paths cache-miss
+73 silly fetch manifest @deepseek-ai/dsh-persona@^0.1.0-rc.6
+74 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-persona cache-miss
+75 silly fetch manifest @deepseek-ai/dsh-plan-mode@^0.1.0-rc.6
+76 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-plan-mode cache-miss
+77 silly fetch manifest @deepseek-ai/dsh-terminal@^0.1.0-rc.6
+78 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-terminal cache-miss
+79 silly fetch manifest @deepseek-ai/dsh-terminal-bash@^0.1.0-rc.6
+80 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-terminal-bash cache-miss
+81 silly fetch manifest @deepseek-ai/dsh-pwsh-local@^0.1.0-rc.6
+82 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-pwsh-local cache-miss
+83 silly fetch manifest @deepseek-ai/dsh-pwsh-sandbox@^0.1.0-rc.6
+84 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-pwsh-sandbox cache-miss
+85 http fetch GET 200 https://registry.npmmirror.com/commander 152ms (cache miss)
+86 silly packumentCache full:https://registry.npmmirror.com/commander set size:62667 disposed:false
+87 silly fetch manifest @deepseek-ai/dsh-session-projection@^0.1.0-rc.6
+88 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-projection cache-miss
+89 http fetch GET 200 https://registry.npmmirror.com/node-addon-require-builtin 179ms (cache miss)
+90 silly packumentCache full:https://registry.npmmirror.com/node-addon-require-builtin set size:3038 disposed:false
+91 silly fetch manifest @deepseek-ai/dsh-time-context@^0.1.0-rc.6
+92 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-time-context cache-miss
+93 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fcordis-plugin-loader 178ms (cache miss)
+94 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fcordis-plugin-loader set size:2923 disposed:false
+95 silly fetch manifest @deepseek-ai/dsh-session-reference@^0.1.0-rc.6
+96 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-reference cache-miss
+97 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-agent-tool-presentation 181ms (cache miss)
+98 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-agent-tool-presentation set size:4703 disposed:false
+99 silly fetch manifest @deepseek-ai/dsh-skill@^0.1.0-rc.6
+100 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-skill cache-miss
+101 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-command-goal 182ms (cache miss)
+102 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-command-goal set size:6117 disposed:false
+103 silly fetch manifest @deepseek-ai/dsh-skill-filesystem@^0.1.0-rc.6
+104 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-skill-filesystem cache-miss
+105 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fcordis-plugin-hmr 199ms (cache miss)
+106 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fcordis-plugin-hmr set size:3228 disposed:false
+107 silly fetch manifest @deepseek-ai/dsh-jobs-local@^0.1.0-rc.6
+108 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-jobs-local cache-miss
+109 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fcordis-plugin-include 214ms (cache miss)
+110 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fcordis-plugin-include set size:2696 disposed:false
+111 silly fetch manifest @deepseek-ai/dsh-tmux-context@^0.1.0-rc.6
+112 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tmux-context cache-miss
+113 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-cordis 213ms (cache miss)
+114 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-cordis set size:7904 disposed:false
+115 silly fetch manifest @deepseek-ai/dsh-token-meter@^0.1.0-rc.6
+116 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-token-meter cache-miss
+117 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-command-compact 221ms (cache miss)
+118 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-command-compact set size:6421 disposed:false
+119 silly fetch manifest @deepseek-ai/dsh-tool-ask-user@^0.1.0-rc.6
+120 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-ask-user cache-miss
+121 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-cordis-client-runner 223ms (cache miss)
+122 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-cordis-client-runner set size:8549 disposed:false
+123 silly fetch manifest @deepseek-ai/dsh-tool-bash@^0.1.0-rc.6
+124 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-bash cache-miss
+125 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-agent-preset 224ms (cache miss)
+126 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-agent-preset set size:8775 disposed:false
+127 silly fetch manifest @deepseek-ai/dsh-tool-bash-persistent@^0.1.0-rc.6
+128 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-bash-persistent cache-miss
+129 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-base 228ms (cache miss)
+130 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-base set size:9289 disposed:false
+131 silly fetch manifest @deepseek-ai/dsh-tool-cordis@^0.1.0-rc.6
+132 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-cordis cache-miss
+133 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-compaction-tool-result-pruner 234ms (cache miss)
+134 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-compaction-tool-result-pruner set size:5254 disposed:false
+135 silly fetch manifest @deepseek-ai/dsh-tool-fs@^0.1.0-rc.6
+136 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-fs cache-miss
+137 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-app-boot 236ms (cache miss)
+138 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-app-boot set size:10742 disposed:false
+139 silly fetch manifest @deepseek-ai/dsh-tool-fs-search@^0.1.0-rc.6
+140 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-fs-search cache-miss
+141 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-compaction-basic 242ms (cache miss)
+142 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-compaction-basic set size:10979 disposed:false
+143 silly fetch manifest @deepseek-ai/dsh-tool-goal@^0.1.0-rc.6
+144 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-goal cache-miss
+145 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-goal 249ms (cache miss)
+146 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-goal set size:7132 disposed:false
+147 silly fetch manifest @deepseek-ai/dsh-tool-pwsh@^0.1.0-rc.6
+148 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-pwsh cache-miss
+149 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-cmdline 263ms (cache miss)
+150 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-cmdline set size:6133 disposed:false
+151 silly fetch manifest @deepseek-ai/dsh-tool-ralph@^0.1.0-rc.6
+152 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-ralph cache-miss
+153 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-launch-environment 266ms (cache miss)
+154 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-launch-environment set size:4486 disposed:false
+155 silly fetch manifest @deepseek-ai/dsh-schedule@^0.1.0-rc.6
+156 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-schedule cache-miss
+157 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fcordis-plugin-timer 271ms (cache miss)
+158 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fcordis-plugin-timer set size:2567 disposed:false
+159 silly fetch manifest @deepseek-ai/dsh-tool-skill@^0.1.0-rc.6
+160 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-skill cache-miss
+161 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-goal-round-driver 270ms (cache miss)
+162 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-goal-round-driver set size:5988 disposed:false
+163 silly fetch manifest @deepseek-ai/dsh-tool-str-replace-editor@^0.1.0-rc.6
+164 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-str-replace-editor cache-miss
+165 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-terminal 269ms (cache miss)
+166 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-terminal set size:4638 disposed:false
+167 silly fetch manifest @deepseek-ai/dsh-tool-subagent@^0.1.0-rc.6
+168 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-subagent cache-miss
+169 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-fs-local 273ms (cache miss)
+170 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-fs-local set size:7854 disposed:false
+171 silly fetch manifest @deepseek-ai/dsh-tool-subagent-control@^0.1.0-rc.6
+172 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-subagent-control cache-miss
+173 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-plan-mode 274ms (cache miss)
+174 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-plan-mode set size:7980 disposed:false
+175 silly fetch manifest @deepseek-ai/dsh-tool-jobs@^0.1.0-rc.6
+176 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-jobs cache-miss
+177 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-mcp-client 276ms (cache miss)
+178 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-mcp-client set size:7421 disposed:false
+179 silly fetch manifest @deepseek-ai/dsh-tool-todo@^0.1.0-rc.6
+180 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-todo cache-miss
+181 http fetch GET 200 https://registry.npmmirror.com/js-yaml 284ms (cache miss)
+182 silly packumentCache full:https://registry.npmmirror.com/js-yaml set size:31063 disposed:false
+183 silly fetch manifest @deepseek-ai/dsh-tool-web@^0.1.0-rc.6
+184 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-web cache-miss
+185 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-headless 284ms (cache miss)
+186 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-headless set size:5331 disposed:false
+187 silly fetch manifest @deepseek-ai/dsh-tool-workflow@^0.1.0-rc.6
+188 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-workflow cache-miss
+189 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-persona 291ms (cache miss)
+190 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-persona set size:5236 disposed:false
+191 silly fetch manifest @deepseek-ai/dsh-web-app@^0.1.0-rc.6
+192 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-web-app cache-miss
+193 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-home-paths 293ms (cache miss)
+194 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-home-paths set size:3993 disposed:false
+195 silly fetch manifest @deepseek-ai/dsh-workflow-worker-thread@^0.1.0-rc.6
+196 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-workflow-worker-thread cache-miss
+197 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-terminal-bash 297ms (cache miss)
+198 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-terminal-bash set size:6035 disposed:false
+199 silly fetch manifest @deepseek-ai/dsh-agent-instructions@^0.1.0-rc.6
+200 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-agent-instructions cache-miss
+201 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-pwsh-local 300ms (cache miss)
+202 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-pwsh-local set size:7653 disposed:false
+203 silly fetch manifest @deepseek-ai/cordis@^4.0.1
+204 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fcordis cache-miss
+205 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-time-context 130ms (cache miss)
+206 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-time-context set size:6674 disposed:false
+207 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-projection 156ms (cache miss)
+208 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-projection set size:6619 disposed:false
+209 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-pwsh-sandbox 303ms (cache miss)
+210 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-pwsh-sandbox set size:5717 disposed:false
+211 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-skill-filesystem 126ms (cache miss)
+212 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-skill-filesystem set size:7322 disposed:false
+213 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-jobs-local 113ms (cache miss)
+214 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-jobs-local set size:5229 disposed:false
+215 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-skill 132ms (cache miss)
+216 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-skill set size:8160 disposed:false
+217 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-reference 139ms (cache miss)
+218 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-reference set size:7119 disposed:false
+219 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-ask-user 98ms (cache miss)
+220 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-ask-user set size:5638 disposed:false
+221 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-token-meter 108ms (cache miss)
+222 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-token-meter set size:7708 disposed:false
+223 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-cordis 93ms (cache miss)
+224 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-cordis set size:7568 disposed:false
+225 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-fs 88ms (cache miss)
+226 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-fs set size:10008 disposed:false
+227 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-goal 81ms (cache miss)
+228 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-goal set size:7221 disposed:false
+229 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tmux-context 113ms (cache miss)
+230 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tmux-context set size:6552 disposed:false
+231 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-fs-search 90ms (cache miss)
+232 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-fs-search set size:10091 disposed:false
+233 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-bash 104ms (cache miss)
+234 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-bash set size:10826 disposed:false
+235 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-bash-persistent 104ms (cache miss)
+236 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-bash-persistent set size:5648 disposed:false
+237 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-pwsh 79ms (cache miss)
+238 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-pwsh set size:9616 disposed:false
+239 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-schedule 65ms (cache miss)
+240 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-schedule set size:8446 disposed:false
+241 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-skill 65ms (cache miss)
+242 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-skill set size:9176 disposed:false
+243 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-ralph 69ms (cache miss)
+244 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-ralph set size:7998 disposed:false
+245 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-workflow-worker-thread 56ms (cache miss)
+246 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-workflow-worker-thread set size:8588 disposed:false
+247 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-subagent 79ms (cache miss)
+248 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-subagent set size:7530 disposed:false
+249 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-web 104ms (cache miss)
+250 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-web set size:8911 disposed:false
+251 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-todo 110ms (cache miss)
+252 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-todo set size:7449 disposed:false
+253 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-jobs 113ms (cache miss)
+254 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-jobs set size:7075 disposed:false
+255 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-agent-instructions 90ms (cache miss)
+256 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-agent-instructions set size:10179 disposed:false
+257 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-web-app 98ms (cache miss)
+258 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-web-app set size:7592 disposed:false
+259 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fcordis 90ms (cache miss)
+260 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fcordis set size:3626 disposed:false
+261 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-workflow 110ms (cache miss)
+262 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-workflow set size:7138 disposed:false
+263 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-subagent-control 125ms (cache miss)
+264 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-subagent-control set size:7816 disposed:false
+265 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-str-replace-editor 132ms (cache miss)
+266 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tool-str-replace-editor set size:5558 disposed:false
+267 silly fetch manifest @deepseek-ai/dsh-invariants@^0.1.0-rc.6
+268 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-invariants cache-miss
+269 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-invariants 85ms (cache miss)
+270 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-invariants set size:6901 disposed:false
+271 silly fetch manifest @deepseek-ai/dsh-tools@^0.1.0-rc.6
+272 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tools cache-miss
+273 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-tools 78ms (cache miss)
+274 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-tools set size:18176 disposed:false
+275 silly fetch manifest @deepseek-ai/dsh-agent@^0.1.0-rc.6
+276 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-agent cache-miss
+277 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-agent 56ms (cache miss)
+278 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-agent set size:12118 disposed:false
+279 silly fetch manifest @deepseek-ai/dsh-llm@^0.1.0-rc.6
+280 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-llm cache-miss
+281 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-llm 60ms (cache miss)
+282 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-llm set size:13071 disposed:false
+283 silly fetch manifest @deepseek-ai/dsh-attachment@^0.1.0-rc.6
+284 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-attachment cache-miss
+285 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-attachment 49ms (cache miss)
+286 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-attachment set size:4353 disposed:false
+287 silly fetch manifest @deepseek-ai/dsh-brand@^0.1.0-rc.6
+288 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-brand cache-miss
+289 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-brand 96ms (cache miss)
+290 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-brand set size:4313 disposed:false
+291 silly fetch manifest @deepseek-ai/dsh-timeout@^0.1.0-rc.6
+292 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-timeout cache-miss
+293 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-timeout 47ms (cache miss)
+294 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-timeout set size:6463 disposed:false
+295 silly fetch manifest @deepseek-ai/dsh-scope@^0.1.0-rc.6
+296 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-scope cache-miss
+297 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-scope 47ms (cache miss)
+298 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-scope set size:6965 disposed:false
+299 silly fetch manifest @deepseek-ai/dsh-session@^0.1.0-rc.6
+300 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-session cache-miss
+301 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-session 61ms (cache miss)
+302 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-session set size:11383 disposed:false
+303 silly fetch manifest @deepseek-ai/dsh-typert-protocol@^0.1.0-rc.6
+304 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-typert-protocol cache-miss
+305 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-typert-protocol 108ms (cache miss)
+306 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-typert-protocol set size:4783 disposed:false
+307 silly fetch manifest @deepseek-ai/dsh-system-prompt@^0.1.0-rc.6
+308 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-system-prompt cache-miss
+309 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-system-prompt 82ms (cache miss)
+310 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-system-prompt set size:8486 disposed:false
+311 silly fetch manifest @deepseek-ai/dsh-code-runtime@^0.1.0-rc.6
+312 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-code-runtime cache-miss
+313 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-code-runtime 64ms (cache miss)
+314 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-code-runtime set size:6111 disposed:false
+315 silly fetch manifest @deepseek-ai/dsh-user-approval@^0.1.0-rc.6
+316 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-user-approval cache-miss
+317 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-user-approval 93ms (cache miss)
+318 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-user-approval set size:6306 disposed:false
+319 silly fetch manifest @deepseek-ai/cordis-plugin-group@^1.0.1
+320 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fcordis-plugin-group cache-miss
+321 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fcordis-plugin-group 117ms (cache miss)
+322 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fcordis-plugin-group set size:2413 disposed:false
+323 silly fetch manifest @deepseek-ai/dsh-api-remotes@^0.1.0-rc.6
+324 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-api-remotes cache-miss
+325 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-api-remotes 81ms (cache miss)
+326 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-api-remotes set size:6240 disposed:false
+327 silly fetch manifest @deepseek-ai/dsh-agent-presets@^0.1.0-rc.6
+328 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-agent-presets cache-miss
+329 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-agent-presets 136ms (cache miss)
+330 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-agent-presets set size:13169 disposed:false
+331 silly fetch manifest @deepseek-ai/dsh-atomic-write@^0.1.0-rc.6
+332 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-atomic-write cache-miss
+333 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-atomic-write 98ms (cache miss)
+334 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-atomic-write set size:4861 disposed:false
+335 silly fetch manifest @deepseek-ai/dsh-settings@^0.1.0-rc.6
+336 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-settings cache-miss
+337 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-settings 118ms (cache miss)
+338 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-settings set size:7448 disposed:false
+339 silly fetch manifest @deepseek-ai/schemastery@^3.18.1
+340 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fschemastery cache-miss
+341 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fschemastery 69ms (cache miss)
+342 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fschemastery set size:5301 disposed:false
+343 silly fetch manifest @deepseek-ai/dsh-api-gateway@^0.1.0-rc.6
+344 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-api-gateway cache-miss
+345 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-api-gateway 79ms (cache miss)
+346 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-api-gateway set size:6636 disposed:false
+347 silly fetch manifest @deepseek-ai/dsh-client-connection@^0.1.0-rc.6
+348 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-connection cache-miss
+349 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-connection 63ms (cache miss)
+350 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-connection set size:7012 disposed:false
+351 silly fetch manifest @deepseek-ai/dsh-host-webserver@^0.1.0-rc.6
+352 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-host-webserver cache-miss
+353 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-host-webserver 103ms (cache miss)
+354 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-host-webserver set size:5573 disposed:false
+355 silly fetch manifest @deepseek-ai/dsh-typert-registry@^0.1.0-rc.6
+356 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-typert-registry cache-miss
+357 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-typert-registry 69ms (cache miss)
+358 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-typert-registry set size:5193 disposed:false
+359 silly fetch manifest @deepseek-ai/dsh-commands@^0.1.0-rc.6
+360 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-commands cache-miss
+361 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-commands 52ms (cache miss)
+362 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-commands set size:6699 disposed:false
+363 silly fetch manifest @deepseek-ai/dsh-cordis-host-runner@^0.1.0-rc.6
+364 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-cordis-host-runner cache-miss
+365 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-cordis-host-runner 88ms (cache miss)
+366 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-cordis-host-runner set size:8589 disposed:false
+367 silly fetch manifest @deepseek-ai/dsh-credentials@^0.1.0-rc.6
+368 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-credentials cache-miss
+369 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-credentials 68ms (cache miss)
+370 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-credentials set size:5604 disposed:false
+371 silly fetch manifest @deepseek-ai/dsh-host-plugin-inventory@^0.1.0-rc.6
+372 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-host-plugin-inventory cache-miss
+373 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-host-plugin-inventory 78ms (cache miss)
+374 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-host-plugin-inventory set size:4290 disposed:false
+375 silly fetch manifest @deepseek-ai/dsh-message-feedback@^0.1.0-rc.6
+376 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-message-feedback cache-miss
+377 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-message-feedback 94ms (cache miss)
+378 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-message-feedback set size:8362 disposed:false
+379 silly fetch manifest @deepseek-ai/dsh-session-persistence@^0.1.0-rc.6
+380 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-persistence cache-miss
+381 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-persistence 102ms (cache miss)
+382 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-persistence set size:10452 disposed:false
+383 silly fetch manifest @deepseek-ai/dsh-storage-domain@^0.1.0-rc.6
+384 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-storage-domain cache-miss
+385 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-storage-domain 98ms (cache miss)
+386 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-storage-domain set size:4697 disposed:false
+387 silly fetch manifest @deepseek-ai/dsh-storage@^0.1.0-rc.6
+388 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-storage cache-miss
+389 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-storage 59ms (cache miss)
+390 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-storage set size:4309 disposed:false
+391 silly fetch manifest @deepseek-ai/dsh-client-modules@^0.1.0-rc.6
+392 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-modules cache-miss
+393 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-modules 51ms (cache miss)
+394 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-modules set size:5626 disposed:false
+395 silly fetch manifest @deepseek-ai/dsh-client-runtime@^0.1.0-rc.6
+396 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-runtime cache-miss
+397 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-runtime 55ms (cache miss)
+398 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-runtime set size:13728 disposed:false
+399 silly fetch manifest @deepseek-ai/dsh-client-ui-slots@^0.1.0-rc.6
+400 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-slots cache-miss
+401 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-slots 63ms (cache miss)
+402 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-slots set size:5917 disposed:false
+403 silly fetch manifest @deepseek-ai/dsh-client-ui-theme@^0.1.0-rc.6
+404 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-theme cache-miss
+405 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-theme 67ms (cache miss)
+406 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-theme set size:6727 disposed:false
+407 silly fetch manifest @deepseek-ai/dsh-client-locale@^0.1.0-rc.6
+408 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-locale cache-miss
+409 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-locale 54ms (cache miss)
+410 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-locale set size:5562 disposed:false
+411 silly fetch manifest @deepseek-ai/dsh-client-ui-primitives@^0.1.0-rc.6
+412 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-primitives cache-miss
+413 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-primitives 60ms (cache miss)
+414 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-primitives set size:10338 disposed:false
+415 silly fetch manifest @deepseek-ai/dsh-client-ui-settings@^0.1.0-rc.6
+416 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-settings cache-miss
+417 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-settings 83ms (cache miss)
+418 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-settings set size:5604 disposed:false
+419 silly fetch manifest @deepseek-ai/dsh-client-schema-form@^0.1.0-rc.6
+420 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-schema-form cache-miss
+421 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-schema-form 100ms (cache miss)
+422 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-schema-form set size:4884 disposed:false
+423 silly fetch manifest react@^18.2.0
+424 silly packumentCache full:https://registry.npmmirror.com/react cache-miss
+425 http fetch GET 200 https://registry.npmmirror.com/react 94ms (cache revalidated)
+426 silly packumentCache full:https://registry.npmmirror.com/react set size:6638620 disposed:false
+427 silly fetch manifest @deepseek-ai/dsh-client-ui-conversation@^0.1.0-rc.6
+428 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-conversation cache-miss
+429 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-conversation 62ms (cache miss)
+430 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-conversation set size:17377 disposed:false
+431 silly fetch manifest @deepseek-ai/dsh-client-ui-attachment@^0.1.0-rc.6
+432 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-attachment cache-miss
+433 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-attachment 48ms (cache miss)
+434 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-attachment set size:4920 disposed:false
+435 silly fetch manifest @deepseek-ai/dsh-client-ui-input-trigger@^0.1.0-rc.6
+436 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-input-trigger cache-miss
+437 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-input-trigger 49ms (cache miss)
+438 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-input-trigger set size:5633 disposed:false
+439 silly fetch manifest @deepseek-ai/dsh-compaction@^0.1.0-rc.6
+440 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-compaction cache-miss
+441 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-compaction 42ms (cache miss)
+442 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-compaction set size:8156 disposed:false
+443 silly fetch manifest @deepseek-ai/dsh-llm-retry@^0.1.0-rc.6
+444 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-llm-retry cache-miss
+445 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-llm-retry 51ms (cache miss)
+446 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-llm-retry set size:7343 disposed:false
+447 silly fetch manifest @deepseek-ai/dsh-session-stats@^0.1.0-rc.6
+448 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-stats cache-miss
+449 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-stats 39ms (cache miss)
+450 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-stats set size:4631 disposed:false
+451 silly fetch manifest @deepseek-ai/dsh-client-web-react@^0.1.0-rc.6
+452 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-web-react cache-miss
+453 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-web-react 43ms (cache miss)
+454 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-web-react set size:4305 disposed:false
+455 silly fetch manifest @deepseek-ai/dsh-client-ui-sidebar@^0.1.0-rc.6
+456 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-sidebar cache-miss
+457 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-sidebar 43ms (cache miss)
+458 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-sidebar set size:5671 disposed:false
+459 silly fetch manifest @deepseek-ai/dsh-client-ui-tool@^0.1.0-rc.6
+460 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-tool cache-miss
+461 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-tool 46ms (cache miss)
+462 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-client-ui-tool set size:6326 disposed:false
+463 silly fetch manifest @deepseek-ai/dsh-fs@^0.1.0-rc.6
+464 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-fs cache-miss
+465 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-fs 36ms (cache miss)
+466 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-fs set size:7896 disposed:false
+467 silly fetch manifest @deepseek-ai/dsh-sandbox@^0.1.0-rc.6
+468 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-sandbox cache-miss
+469 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-sandbox 35ms (cache miss)
+470 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-sandbox set size:5776 disposed:false
+471 silly fetch manifest @deepseek-ai/dsh-agent-default-model@^0.1.0-rc.6
+472 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-agent-default-model cache-miss
+473 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-agent-default-model 60ms (cache miss)
+474 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-agent-default-model set size:4817 disposed:false
+475 silly fetch manifest @deepseek-ai/dsh-subprocess@^0.1.0-rc.6
+476 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-subprocess cache-miss
+477 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-subprocess 61ms (cache miss)
+478 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-subprocess set size:5893 disposed:false
+479 silly fetch manifest @deepseek-ai/dsh-user-questions@^0.1.0-rc.6
+480 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-user-questions cache-miss
+481 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-user-questions 38ms (cache miss)
+482 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-user-questions set size:5295 disposed:false
+483 silly fetch manifest @deepseek-ai/dsh-sandbox-policy@^0.1.0-rc.6
+484 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-sandbox-policy cache-miss
+485 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-sandbox-policy 37ms (cache miss)
+486 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-sandbox-policy set size:6743 disposed:false
+487 silly fetch manifest @deepseek-ai/dsh-shell@^0.1.0-rc.6
+488 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-shell cache-miss
+489 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-shell 55ms (cache miss)
+490 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-shell set size:5987 disposed:false
+491 silly fetch manifest @deepseek-ai/dsh-output-retention@^0.1.0-rc.6
+492 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-output-retention cache-miss
+493 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-output-retention 42ms (cache miss)
+494 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-output-retention set size:5683 disposed:false
+495 silly fetch manifest @deepseek-ai/dsh-session-query@^0.1.0-rc.6
+496 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-query cache-miss
+497 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-query 47ms (cache miss)
+498 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-query set size:7862 disposed:false
+499 silly fetch manifest @deepseek-ai/dsh-session-title@^0.1.0-rc.6
+500 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-title cache-miss
+501 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-title 40ms (cache miss)
+502 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-title set size:6640 disposed:false
+503 silly fetch manifest @deepseek-ai/dsh-jobs@^0.1.0-rc.6
+504 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-jobs cache-miss
+505 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-jobs 60ms (cache miss)
+506 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-jobs set size:5487 disposed:false
+507 silly fetch manifest @deepseek-ai/dsh-shell-env@^0.1.0-rc.6
+508 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-shell-env cache-miss
+509 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-shell-env 65ms (cache miss)
+510 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-shell-env set size:4984 disposed:false
+511 silly fetch manifest @deepseek-ai/dsh-spill@^0.1.0-rc.6
+512 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-spill cache-miss
+513 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-spill 38ms (cache miss)
+514 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-spill set size:5124 disposed:false
+515 silly fetch manifest @deepseek-ai/dsh-subagent@^0.1.0-rc.6
+516 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-subagent cache-miss
+517 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-subagent 54ms (cache miss)
+518 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-subagent set size:16999 disposed:false
+519 silly fetch manifest @deepseek-ai/dsh-session-projection-cache@^0.1.0-rc.6
+520 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-projection-cache cache-miss
+521 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-projection-cache 68ms (cache miss)
+522 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-session-projection-cache set size:6823 disposed:false
+523 silly fetch manifest @deepseek-ai/dsh-workflow@^0.1.0-rc.6
+524 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-workflow cache-miss
+525 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-workflow 46ms (cache miss)
+526 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-workflow set size:5938 disposed:false
+527 silly fetch manifest @deepseek-ai/dsh-web@^0.1.0-rc.6
+528 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-web cache-miss
+529 http fetch GET 200 https://registry.npmmirror.com/@deepseek-ai%2fdsh-web 35ms (cache miss)
+530 silly packumentCache full:https://registry.npmmirror.com/@deepseek-ai%2fdsh-web set size:6506 disposed:false
+531 silly placeDep ROOT @deepseek-ai/cordis@4.0.1 OK for: @deepseek-ai/dsh@0.1.0-rc.6 want: ^4.0.1
+532 silly placeDep ROOT @deepseek-ai/cordis-plugin-hmr@1.0.16 OK for: @deepseek-ai/dsh@0.1.0-rc.6 want: ^1.0.16
+533 silly placeDep ROOT @deepseek-ai/cordis-plugin-timer@1.1.3 OK for: @deepseek-ai/cordis-plugin-hmr@1.0.16 want: ^1.1.3
+534 silly placeDep ROOT @deepseek-ai/cordis-plugin-include@1.0.6 OK for: @deepseek-ai/dsh@0.1.0-rc.6 want: ^1.0.6
+535 silly placeDep ROOT @deepseek-ai/cordis-plugin-loader@1.0.2 OK for: @deepseek-ai/cordis-plugin-include@1.0.6 want: ^1.0.2
+536 silly placeDep ROOT @deepseek-ai/dsh-agent-instructions@0.1.0-rc.6 OK for: @deepseek-ai/dsh@0.1.0-rc.6 want: ^0.1.0-rc.6
+537 silly placeDep ROOT @deepseek-ai/dsh-agent@0.1.0-rc.6 OK for: @deepseek-ai/dsh-agent-instructions@0.1.0-rc.6 want: ^0.1.0-rc.6
+538 silly placeDep ROOT @deepseek-ai/dsh-invariants@0.1.0-rc.6 OK for: @deepseek-ai/dsh-agent@0.1.0-rc.6 want: ^0.1.0-rc.6
+539 silly placeDep ROOT @deepseek-ai/dsh-llm@0.1.0-rc.6 OK for: @deepseek-ai/dsh-agent@0.1.0-rc.6 want: ^0.1.0-rc.6
+540 silly placeDep ROOT @deepseek-ai/dsh-attachment@0.1.0-rc.6 OK for: @deepseek-ai/dsh-llm@0.1.0-rc.6 want: ^0.1.0-rc.6
+541 silly placeDep ROOT @deepseek-ai/dsh-brand@0.1.0-rc.6 OK for: @deepseek-ai/dsh-attachment@0.1.0-rc.6 want: ^0.1.0-rc.6
+542 silly placeDep ROOT @deepseek-ai/dsh-timeout@0.1.0-rc.6 OK for: @deepseek-ai/dsh-llm@0.1.0-rc.6 want: ^0.1.0-rc.6
+543 silly placeDep ROOT @deepseek-ai/dsh-scope@0.1.0-rc.6 OK for: @deepseek-ai/dsh-agent@0.1.0-rc.6 want: ^0.1.0-rc.6
+544 silly placeDep ROOT @deepseek-ai/dsh-session@0.1.0-rc.6 OK for: @deepseek-ai/dsh-agent@0.1.0-rc.6 want: ^0.1.0-rc.6
+545 silly placeDep ROOT @deepseek-ai/dsh-typert-protocol@0.1.0-rc.6 OK for: @deepseek-ai/dsh-session@0.1.0-rc.6 want: ^0.1.0-rc.6
+546 silly placeDep ROOT @deepseek-ai/dsh-system-prompt@0.1.0-rc.6 OK for: @deepseek-ai/dsh-agent@0.1.0-rc.6 want: ^0.1.0-rc.6
+547 silly placeDep ROOT @deepseek-ai/dsh-fs@0.1.0-rc.6 OK for: @deepseek-ai/dsh-agent-instructions@0.1.0-rc.6 want: ^0.1.0-rc.6
+548 silly placeDep ROOT @deepseek-ai/dsh-sandbox@0.1.0-rc.6 OK for: @deepseek-ai/dsh-fs@0.1.0-rc.6 want: ^0.1.0-rc.6
+549 silly placeDep ROOT @deepseek-ai/dsh-home-paths@0.1.0-rc.6 OK for: @deepseek-ai/dsh-agent-instructions@0.1.0-rc.6 want: ^0.1.0-rc.6
+550 silly placeDep ROOT @deepseek-ai/dsh-tools@0.1.0-rc.6 OK for: @deepseek-ai/dsh-agent-instructions@0.1.0-rc.6 want: ^0.1.0-rc.6
+551 silly placeDep ROOT @deepseek-ai/dsh-code-runtime@0.1.0-rc.6 OK for: @deepseek-ai/dsh-tools@0.1.0-rc.6 want: ^0.1.0-rc.6
+552 silly placeDep ROOT @deepseek-ai/dsh-user-approval@0.1.0-rc.6 OK for: @deepseek-ai/dsh-tools@0.1.0-rc.6 want: ^0.1.0-rc.6
+553 silly placeDep ROOT @deepseek-ai/dsh-agent-tool-presentation@0.1.0-rc.6 OK for: @deepseek-ai/dsh@0.1.0-rc.6 want: ^0.1.0-rc.6
+554 silly placeDep ROOT @deepseek-ai/dsh-app-boot@0.1.0-rc.6 OK for: @deepseek-ai/dsh@0.1.0-rc.6 want: ^0.1.0-rc.6
+555 silly placeDep ROOT @deepseek-ai/cordis-plugin-group@1.0.1 OK for: @deepseek-ai/dsh-app-boot@0.1.0-rc.6 want: ^1.0.1
+556 silly placeDep ROOT @deepseek-ai/dsh-launch-environment@0.1.0-rc.6 OK for: @deepseek-ai/dsh-app-boot@0.1.0-rc.6 want: ^0.1.0-rc.6
+557 silly placeDep ROOT @deepseek-ai/dsh-base@0.1.0-rc.6 OK for: @deepseek-ai/dsh@0.1.0-rc.6 want: ^0.1.0-rc.6
+558 silly placeDep ROOT @deepseek-ai/dsh-client-ui-agent-preset@0.1.0-rc.6 OK for: @deepseek-ai/dsh@0.1.0-rc.6 want: ^0.1.0-rc.6
+559 silly placeDep ROOT react@18.3.1 OK for: @deepseek-ai/dsh-client-ui-agent-preset@0.1.0-rc.6 want: ^18.2.0
+560 silly placeDep ROOT @deepseek-ai/dsh-api-remotes@0.1.0-rc.6 OK for: @deepseek-ai/dsh-client-ui-agent-preset@0.1.0-rc.6 want: ^0.1.0-rc.6
+561 silly placeDep ROOT @deepseek-ai/dsh-api-gateway@0.1.0-rc.6 OK for: @deepseek-ai/dsh-api-remotes@0.1.0-rc.6 want: ^0.1.0-rc.6
+562 silly placeDep ROOT @deepseek-ai/dsh-client-connection@0.1.0-rc.6 OK for: @deepseek-ai/dsh-api-gateway@0.1.0-rc.6 want: ^0.1.0-rc.6
+563 silly placeDep ROOT @deepseek-ai/dsh-host-webserver@0.1.0-rc.6 OK for: @deepseek-ai/dsh-client-connection@0.1.0-rc.6 want: ^0.1.0-rc.6
+564 silly placeDep ROOT @deepseek-ai/dsh-typert-registry@0.1.0-rc.6 OK for: @deepseek-ai/dsh-api-gateway@0.1.0-rc.6 want: ^0.1.0-rc.6
+565 silly placeDep ROOT @deepseek-ai/dsh-commands@0.1.0-rc.6 OK for: @deepseek-ai/dsh-api-remotes@0.1.0-rc.6 want: ^0.1.0-rc.6
+566 silly placeDep ROOT @deepseek-ai/dsh-goal@0.1.0-rc.6 OK for: @deepseek-ai/dsh-api-remotes@0.1.0-rc.6 want: ^0.1.0-rc.6
+567 silly placeDep ROOT @deepseek-ai/dsh-session-projection@0.1.0-rc.6 OK for: @deepseek-ai/dsh-goal@0.1.0-rc.6 want: ^0.1.0-rc.6
+568 silly placeDep ROOT @deepseek-ai/dsh-cordis-host-runner@0.1.0-rc.6 OK for: @deepseek-ai/dsh-api-remotes@0.1.0-rc.6 want: ^0.1.0-rc.6
+569 silly placeDep ROOT @deepseek-ai/dsh-host-plugin-inventory@0.1.0-rc.6 OK for: @deepseek-ai/dsh-api-remotes@0.1.0-rc.6 want: ^0.1.0-rc.6
+570 silly placeDep ROOT @deepseek-ai/dsh-agent-presets@0.1.0-rc.6 OK for: @deepseek-ai/dsh-api-remotes@0.1.0-rc.6 want: ^0.1.0-rc.6
+571 silly placeDep ROOT @deepseek-ai/dsh-atomic-write@0.1.0-rc.6 OK for: @deepseek-ai/dsh-agent-presets@0.1.0-rc.6 want: ^0.1.0-rc.6
+572 silly placeDep ROOT @deepseek-ai/dsh-settings@0.1.0-rc.6 OK for: @deepseek-ai/dsh-agent-presets@0.1.0-rc.6 want: ^0.1.0-rc.6
+573 silly placeDep ROOT @deepseek-ai/schemastery@3.18.1 OK for: @deepseek-ai/dsh-settings@0.1.0-rc.6 want: ^3.18.1
+574 silly placeDep ROOT @deepseek-ai/dsh-credentials@0.1.0-rc.6 OK for: @deepseek-ai/dsh-api-remotes@0.1.0-rc.6 want: ^0.1.0-rc.6
+575 silly placeDep ROOT @deepseek-ai/dsh-message-feedback@0.1.0-rc.6 OK for: @deepseek-ai/dsh-api-remotes@0.1.0-rc.6 want: ^0.1.0-rc.6
+576 silly placeDep ROOT @deepseek-ai/dsh-session-persistence@0.1.0-rc.6 OK for: @deepseek-ai/dsh-message-feedback@0.1.0-rc.6 want: ^0.1.0-rc.6
+577 silly placeDep ROOT @deepseek-ai/dsh-storage-domain@0.1.0-rc.6 OK for: @deepseek-ai/dsh-message-feedback@0.1.0-rc.6 want: ^0.1.0-rc.6
+578 silly placeDep ROOT @deepseek-ai/dsh-storage@0.1.0-rc.6 OK for: @deepseek-ai/dsh-storage-domain@0.1.0-rc.6 want: ^0.1.0-rc.6
+579 silly placeDep ROOT @deepseek-ai/dsh-client-locale@0.1.0-rc.6 OK for: @deepseek-ai/dsh-client-ui-agent-preset@0.1.0-rc.6 want: ^0.1.0-rc.6
+580 silly placeDep ROOT @deepseek-ai/dsh-client-ui-primitives@0.1.0-rc.6 OK for: @deepseek-ai/dsh-client-locale@0.1.0-rc.6 want: ^0.1.0-rc.6
+581 silly placeDep ROOT @deepseek-ai/dsh-client-ui-settings@0.1.0-rc.6 OK for: @deepseek-ai/dsh-client-locale@0.1.0-rc.6 want: ^0.1.0-rc.6
+582 silly placeDep ROOT @deepseek-ai/dsh-client-runtime@0.1.0-rc.6 OK for: @deepseek-ai/dsh-client-ui-settings@0.1.0-rc.6 want: ^0.1.0-rc.6
+583 silly placeDep ROOT @deepseek-ai/dsh-client-ui-slots@0.1.0-rc.6 OK for: @deepseek-ai/dsh-client-ui-settings@0.1.0-rc.6 want: ^0.1.0-rc.6
+584 silly placeDep ROOT @deepseek-ai/dsh-client-schema-form@0.1.0-rc.6 OK for: @deepseek-ai/dsh-client-ui-settings@0.1.0-rc.6 want: ^0.1.0-rc.6
+585 silly placeDep ROOT @deepseek-ai/dsh-client-ui-conversation@0.1.0-rc.6 OK for: @deepseek-ai/dsh-client-ui-agent-preset@0.1.0-rc.6 want: ^0.1.0-rc.6
+586 silly placeDep ROOT @deepseek-ai/dsh-client-ui-attachment@0.1.0-rc.6 OK for: @deepseek-ai/dsh-client-ui-conversation@0.1.0-rc.6 want: ^0.1.0-rc.6
+587 silly placeDep ROOT @deepseek-ai/dsh-client-ui-input-trigger@0.1.0-rc.6 OK for: @deepseek-ai/dsh-client-ui-conversation@0.1.0-rc.6 want: ^0.1.0-rc.6
+588 silly placeDep ROOT @deepseek-ai/dsh-compaction@0.1.0-rc.6 OK for: @deepseek-ai/dsh-client-ui-conversation@0.1.0-rc.6 want: ^0.1.0-rc.6
+589 silly placeDep ROOT @deepseek-ai/dsh-llm-retry@0.1.0-rc.6 OK for: @deepseek-ai/dsh-client-ui-conversation@0.1.0-rc.6 want: ^0.1.0-rc.6
+590 silly placeDep ROOT @deepseek-ai/dsh-token-meter@0.1.0-rc.6 OK for: @deepseek-ai/dsh-client-ui-conversation@0.1.0-rc.6 want: ^0.1.0-rc.6
+591 silly placeDep ROOT @deepseek-ai/dsh-session-stats@0.1.0-rc.6 OK for: @deepseek-ai/dsh-client-ui-conversation@0.1.0-rc.6 want: ^0.1.0-rc.6
+592 silly placeDep ROOT @deepseek-ai/dsh-client-web-react@0.1.0-rc.6 OK for: @deepseek-ai/dsh-client-ui-agent-preset@0.1.0-rc.6 want: ^0.1.0-rc.6

@@ -37,6 +37,15 @@ export type ReluMomentumPoint = {
   reluMomentum: number;
 };
 
+export type ReluMetrics = {
+  threshold: number;
+  lookbackDays: number;
+  reluSlope: number;
+  positiveDensity: number;
+  plateauRatio: number;
+  momentumPurity: number;
+};
+
 export type ReluFactor = {
   name: string;
   rawScore: number;
@@ -50,6 +59,7 @@ export type AnalysisResponse = {
   event: ExtractedEvent;
   stocks: StockImpact[];
   reluMomentum: ReluMomentumPoint[];
+  reluMetrics: ReluMetrics | null;
   reluFactors: ReluFactor[];
   explanation: string;
   riskNote: string;

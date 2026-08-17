@@ -65,6 +65,14 @@ export const demoAnalysis: AnalysisResponse = {
     { day: 11, price: 109.9, returnPct: 1.65, cumulativeReturn: 9.43, reluReturn: 1.25, reluMomentum: 7.99 },
     { day: 12, price: 111.2, returnPct: 1.18, cumulativeReturn: 10.61, reluReturn: 0.78, reluMomentum: 8.77 }
   ],
+  reluMetrics: {
+    threshold: 0.004,
+    lookbackDays: 11,
+    reluSlope: 0.00797,
+    positiveDensity: 0.73,
+    plateauRatio: 0.27,
+    momentumPurity: 0.00425
+  },
   reluFactors: [
     {
       name: "国际项目规模因子",

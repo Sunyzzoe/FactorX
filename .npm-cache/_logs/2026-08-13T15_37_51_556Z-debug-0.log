@@ -1,0 +1,27 @@
+0 verbose cli D:\node\node.exe D:\node\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.8.2
+2 info using node@v20.19.0
+3 silly config load:file:D:\node\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\HP\.npmrc
+5 silly config load:file:C:\Users\HP\npm-global\etc\npmrc
+6 verbose title npm install pnpm@10.18.0
+7 verbose argv "install" "--global" "pnpm@10.18.0"
+8 verbose logfile logs-max:10 dir:e:\FactorX\.npm-cache\_logs\2026-08-13T15_37_51_556Z-
+9 verbose logfile e:\FactorX\.npm-cache\_logs\2026-08-13T15_37_51_556Z-debug-0.log
+10 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
+13 silly idealTree buildDeps
+14 silly fetch manifest pnpm@10.18.0
+15 silly packumentCache full:https://registry.npmmirror.com/pnpm cache-miss
+16 http fetch GET 200 https://registry.npmmirror.com/pnpm 16ms (cache hit)
+17 silly packumentCache full:https://registry.npmmirror.com/pnpm set size:5183276 disposed:false
+18 silly placeDep ROOT pnpm@10.18.0 OK for:  want: 10.18.0
+19 silly reify moves {}
+20 silly ADD node_modules/pnpm
+21 verbose cwd F:\deepseek-harness-master\deepseek-harness-master
+22 verbose os Windows_NT 10.0.22631
+23 verbose node v20.19.0
+24 verbose npm  v10.8.2
+25 verbose exit 0
+26 info ok

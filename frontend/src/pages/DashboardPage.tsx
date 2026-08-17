@@ -94,7 +94,11 @@ export function DashboardPage() {
         />
       </section>
 
-      <ReluMomentumChart data={analysis?.reluMomentum ?? []} selectedStock={selectedStock} />
+      <ReluMomentumChart
+        data={analysis?.reluMomentum ?? []}
+        metrics={analysis?.reluMetrics ?? null}
+        selectedStock={selectedStock}
+      />
 
       <section className="bottom-grid">
         <FactorActivationPanel factors={analysis?.reluFactors ?? []} selectedStock={selectedStock} />

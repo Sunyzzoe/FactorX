@@ -7,6 +7,7 @@ public record AnalysisResponse(
         ExtractedEvent event,
         List<StockImpact> stocks,
         List<ReluMomentumPoint> reluMomentum,
+        ReluMetrics reluMetrics,
         List<ReluFactor> reluFactors,
         String explanation,
         String riskNote

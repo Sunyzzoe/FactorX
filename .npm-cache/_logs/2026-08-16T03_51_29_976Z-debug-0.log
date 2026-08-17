@@ -1,0 +1,41 @@
+0 verbose cli D:\node\node.exe D:\node\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.19.0
+2 info using node@v26.7.0
+3 silly config load:file:D:\node\node_modules\npm\npmrc
+4 silly config load:file:F:\奶龙杯\pigdogcat\.npmrc
+5 silly config load:file:C:\Users\HP\.npmrc
+6 silly config load:file:C:\Users\HP\npm-global\etc\npmrc
+7 verbose title npm install
+8 verbose argv "install"
+9 verbose logfile logs-max:10 dir:e:\FactorX\.npm-cache\_logs\2026-08-16T03_51_29_976Z-
+10 verbose logfile e:\FactorX\.npm-cache\_logs\2026-08-16T03_51_29_976Z-debug-0.log
+11 silly logfile start cleaning logs, removing 2 files
+12 silly install-scripts no package.json at prefix Could not read package.json: Error: ENOENT: no such file or directory, open 'F:\奶龙杯\pigdogcat\package.json'
+13 silly packumentCache heap:4395630592 maxSize:1098907648 maxEntrySize:549453824
+14 silly logfile done cleaning log files
+15 silly idealTree buildDeps
+16 silly reify moves {}
+17 verbose stack Error: Could not read package.json: Error: ENOENT: no such file or directory, open 'F:\奶龙杯\pigdogcat\package.json'
+17 verbose stack     at async open (node:internal/fs/promises:1360:25)
+17 verbose stack     at async readFile (node:internal/fs/promises:2149:14)
+17 verbose stack     at async read (D:\node\node_modules\npm\node_modules\@npmcli\package-json\lib\read-package.js:9:18)
+17 verbose stack     at async PackageJson.load (D:\node\node_modules\npm\node_modules\@npmcli\package-json\lib\index.js:131:31)
+17 verbose stack     at async PackageJson.normalize (D:\node\node_modules\npm\node_modules\@npmcli\package-json\lib\index.js:117:5)
+17 verbose stack     at async runScript (D:\node\node_modules\npm\node_modules\@npmcli\run-script\lib\run-script.js:11:28)
+17 verbose stack     at async Install.exec (D:\node\node_modules\npm\lib\commands\install.js:171:9)
+17 verbose stack     at async Npm.exec (D:\node\node_modules\npm\lib\npm.js:193:9)
+17 verbose stack     at async module.exports (D:\node\node_modules\npm\lib\cli\entry.js:67:5)
+18 error code ENOENT
+19 error syscall open
+20 error path F:\奶龙杯\pigdogcat\package.json
+21 error errno -4058
+22 error enoent Could not read package.json: Error: ENOENT: no such file or directory, open 'F:\奶龙杯\pigdogcat\package.json'
+23 error enoent This is related to npm not being able to find a file.
+23 error enoent
+24 verbose cwd F:\奶龙杯\pigdogcat
+25 verbose os Windows_NT 10.0.22631
+26 verbose node v26.7.0
+27 verbose npm  v11.19.0
+28 verbose exit -4058
+29 verbose code -4058
+30 error A complete log of this run can be found in: e:\FactorX\.npm-cache\_logs\2026-08-16T03_51_29_976Z-debug-0.log

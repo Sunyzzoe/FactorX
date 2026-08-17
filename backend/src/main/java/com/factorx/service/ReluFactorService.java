@@ -2,88 +2,115 @@ package com.factorx.service;
 
 import com.factorx.model.ReluFactor;
 import com.factorx.model.ReluMomentumPoint;
+import com.factorx.model.ReluMetrics;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
 public class ReluFactorService {
 
-    private static final double THRESHOLD = 0.005;
+    public static final double DEFAULT_THRESHOLD = 0.004;
 
     public ReluResult calculate(List<MatchedStock> matchedStocks) {
-        double[] closePrices = simulatedClosePrices(matchedStocks);
-        List<ReluMomentumPoint> points = new ArrayList<>();
+        double[] simulatedPrices = simulatedClosePrices(matchedStocks);
+        List<BigDecimal> closePrices = Arrays.stream(simulatedPrices)
+                .mapToObj(BigDecimal::valueOf)
+                .toList();
+        return calculate(closePrices, BigDecimal.valueOf(DEFAULT_THRESHOLD), closePrices.size() - 1);
+    }
 
-        double basePrice = closePrices[0];
-        double cumulativeReturn = 0;
+    public ReluResult calculate(List<BigDecimal> closePrices, BigDecimal threshold, Integer lookbackDays) {
+        validate(closePrices, threshold, lookbackDays);
+
+        int availableReturnDays = closePrices.size() - 1;
+        int effectiveLookbackDays = Math.min(lookbackDays, availableReturnDays);
+        int startIndex = closePrices.size() - effectiveLookbackDays - 1;
+        List<BigDecimal> window = closePrices.subList(startIndex, closePrices.size());
+
+        double thresholdValue = threshold.doubleValue();
+        double basePrice = window.get(0).doubleValue();
         double reluMomentum = 0;
         int positiveDays = 0;
-        int plateauDays = 0;
+        List<ReluMomentumPoint> points = new ArrayList<>();
 
-        points.add(new ReluMomentumPoint(-closePrices.length + 1, round(basePrice), 0, 0, 0, 0));
-
-        for (int i = 1; i < closePrices.length; i++) {
-            double dailyReturn = Math.log(closePrices[i] / closePrices[i - 1]);
-            double reluReturn = Math.max(0, dailyReturn - THRESHOLD);
-            cumulativeReturn = Math.log(closePrices[i] / basePrice);
+        points.add(new ReluMomentumPoint(-effectiveLookbackDays, round(basePrice), 0, 0, 0, 0));
+        for (int index = 1; index < window.size(); index++) {
+            double price = window.get(index).doubleValue();
+            double previousPrice = window.get(index - 1).doubleValue();
+            double dailyReturn = Math.log(price / previousPrice);
+            double reluReturn = Math.max(0, dailyReturn - thresholdValue);
             reluMomentum += reluReturn;
 
-            if (dailyReturn > THRESHOLD) {
+            if (dailyReturn > thresholdValue) {
                 positiveDays++;
-            } else {
-                plateauDays++;
             }
 
             points.add(new ReluMomentumPoint(
-                    i - closePrices.length + 1,
-                    round(closePrices[i]),
+                    index - effectiveLookbackDays,
+                    round(price),
                     round(dailyReturn * 100),
-                    round(cumulativeReturn * 100),
+                    round(Math.log(price / basePrice) * 100),
                     round(reluReturn * 100),
                     round(reluMomentum * 100)
             ));
         }
 
-        int lookbackDays = closePrices.length - 1;
-        double reluSlope = reluMomentum / lookbackDays;
-        double positiveDensity = (double) positiveDays / lookbackDays;
-        double plateauRatio = (double) plateauDays / lookbackDays;
-        double momentumPurity = clamp(reluSlope * 100 * positiveDensity * (1 - plateauRatio));
-        double momentumScore = clamp(momentumPurity * 1.25 + positiveDensity * 0.25);
-
-        List<ReluFactor> factors = List.of(
-                factor("动量纯度", momentumPurity, 0.30, "ReLU 累计动量斜率、正向密度和平台占比共同决定。"),
-                factor("正向密度", positiveDensity, 0.45, "超过 0.5% 激活阈值的上涨交易日占比。"),
-                factor("平台风险", plateauRatio, 0.50, "未超过激活阈值的交易日占比，数值越高代表信号越弱。"),
-                factor("ReLU 动量因子", momentumScore, 0.50, "MVP 使用模拟价格序列，后续可替换为真实收盘价。")
+        double reluSlope = reluMomentum / effectiveLookbackDays;
+        double positiveDensity = (double) positiveDays / effectiveLookbackDays;
+        double plateauRatio = 1 - positiveDensity;
+        double momentumPurity = reluSlope * positiveDensity * (1 - plateauRatio);
+        ReluMetrics metrics = new ReluMetrics(
+                thresholdValue,
+                effectiveLookbackDays,
+                reluSlope,
+                positiveDensity,
+                plateauRatio,
+                momentumPurity
         );
 
-        return new ReluResult(points, factors, momentumScore);
+        double momentumScore = clamp(momentumPurity * 100 * 1.25 + positiveDensity * 0.25);
+        List<ReluFactor> factors = List.of(
+                factor("Alpha Purity", momentumPurity, 0.003, "Effective positive momentum after threshold filtering."),
+                factor("Positive Momentum Density", positiveDensity, 0.45, "Share of return days above the ReLU threshold."),
+                factor("Plateau Risk", 1 - plateauRatio, 0.50, "Higher activation means less time spent on the ReLU plateau."),
+                factor("ReLU Momentum", momentumScore, 0.50, "Normalized confirmation score for the impact model.")
+        );
+
+        return new ReluResult(points, metrics, factors, momentumScore);
+    }
+
+    private void validate(List<BigDecimal> closePrices, BigDecimal threshold, Integer lookbackDays) {
+        if (closePrices == null || closePrices.size() < 2) {
+            throw new IllegalArgumentException("closePrices must contain at least two positive prices.");
+        }
+        if (closePrices.stream().anyMatch(price -> price == null || price.signum() <= 0)) {
+            throw new IllegalArgumentException("closePrices must contain only positive values.");
+        }
+        if (threshold == null || threshold.signum() < 0) {
+            throw new IllegalArgumentException("threshold must be zero or positive.");
+        }
+        if (lookbackDays == null || lookbackDays < 1) {
+            throw new IllegalArgumentException("lookbackDays must be at least one.");
+        }
     }
 
     private double[] simulatedClosePrices(List<MatchedStock> matchedStocks) {
         double relevance = matchedStocks.isEmpty() ? 0.6 : matchedStocks.get(0).relevance();
         double lift = Math.max(0, relevance - 0.5);
         return new double[]{
-                100.0,
-                100.8 + lift,
-                102.0 + lift,
-                101.5 + lift,
-                103.0 + lift * 1.4,
-                104.4 + lift * 1.5,
-                104.0 + lift,
-                105.2 + lift * 1.6,
-                107.3 + lift * 1.8,
-                108.4 + lift * 2,
-                109.8 + lift * 2.1,
-                111.0 + lift * 2.2
+                100.0, 100.8 + lift, 102.0 + lift, 101.5 + lift,
+                103.0 + lift * 1.4, 104.4 + lift * 1.5, 104.0 + lift,
+                105.2 + lift * 1.6, 107.3 + lift * 1.8, 108.4 + lift * 2,
+                109.8 + lift * 2.1, 111.0 + lift * 2.2
         };
     }
 
     private ReluFactor factor(String name, double rawScore, double threshold, String reason) {
-        double activation = Math.max(0, rawScore - threshold) / (1 - threshold);
+        double activation = threshold >= 1 ? 0 : Math.max(0, rawScore - threshold) / (1 - threshold);
         return new ReluFactor(name, round(rawScore), threshold, round(clamp(activation)), reason);
     }
 
@@ -92,6 +119,6 @@ public class ReluFactorService {
     }
 
     private double round(double value) {
-        return Math.round(value * 100.0) / 100.0;
+        return Math.round(value * 10000.0) / 10000.0;
     }
 }

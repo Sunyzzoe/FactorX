@@ -1,0 +1,39 @@
+0 verbose cli D:\node\node.exe D:\node\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.8.2
+2 info using node@v20.19.0
+3 silly config load:file:D:\node\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\HP\.npmrc
+5 silly config load:file:C:\Users\HP\npm-global\etc\npmrc
+6 verbose title npm uninstall pnpm
+7 verbose argv "uninstall" "--global" "pnpm"
+8 verbose logfile logs-max:10 dir:e:\FactorX\.npm-cache\_logs\2026-08-13T15_37_22_274Z-
+9 verbose logfile e:\FactorX\.npm-cache\_logs\2026-08-13T15_37_22_274Z-debug-0.log
+10 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
+13 silly idealTree buildDeps
+14 silly reify mark retired [
+14 silly reify   'C:\\Users\\HP\\npm-global\\node_modules\\pnpm',
+14 silly reify   'C:\\Users\\HP\\npm-global\\pnpm',
+14 silly reify   'C:\\Users\\HP\\npm-global\\pnpm.cmd',
+14 silly reify   'C:\\Users\\HP\\npm-global\\pnpm.ps1',
+14 silly reify   'C:\\Users\\HP\\npm-global\\pnpx',
+14 silly reify   'C:\\Users\\HP\\npm-global\\pnpx.cmd',
+14 silly reify   'C:\\Users\\HP\\npm-global\\pnpx.ps1'
+14 silly reify ]
+15 silly reify moves {
+15 silly reify   'C:\\Users\\HP\\npm-global\\node_modules\\pnpm': 'C:\\Users\\HP\\npm-global\\node_modules\\.pnpm-s8XoUY97',
+15 silly reify   'C:\\Users\\HP\\npm-global\\pnpm': 'C:\\Users\\HP\\npm-global\\.pnpm-F7XwBxYC',
+15 silly reify   'C:\\Users\\HP\\npm-global\\pnpm.cmd': 'C:\\Users\\HP\\npm-global\\.pnpm.cmd-Avyltuod',
+15 silly reify   'C:\\Users\\HP\\npm-global\\pnpm.ps1': 'C:\\Users\\HP\\npm-global\\.pnpm.ps1-Z9ZAY4dX',
+15 silly reify   'C:\\Users\\HP\\npm-global\\pnpx': 'C:\\Users\\HP\\npm-global\\.pnpx-nSfrl9xx',
+15 silly reify   'C:\\Users\\HP\\npm-global\\pnpx.cmd': 'C:\\Users\\HP\\npm-global\\.pnpx.cmd-ouvEbcOq',
+15 silly reify   'C:\\Users\\HP\\npm-global\\pnpx.ps1': 'C:\\Users\\HP\\npm-global\\.pnpx.ps1-cytuJyCh'
+15 silly reify }
+16 silly REMOVE node_modules/pnpm
+17 verbose cwd F:\deepseek-harness-master\deepseek-harness-master
+18 verbose os Windows_NT 10.0.22631
+19 verbose node v20.19.0
+20 verbose npm  v10.8.2
+21 verbose exit 0
+22 info ok

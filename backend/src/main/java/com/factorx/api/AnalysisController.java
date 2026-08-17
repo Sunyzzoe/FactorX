@@ -2,6 +2,9 @@ package com.factorx.api;
 
 import com.factorx.model.AnalysisRequest;
 import com.factorx.model.AnalysisResponse;
+import com.factorx.model.ReluMomentumRequest;
+import com.factorx.service.ReluFactorService;
+import com.factorx.service.ReluResult;
 import com.factorx.service.NewsAnalysisService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -17,9 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class AnalysisController {
 
     private final NewsAnalysisService newsAnalysisService;
+    private final ReluFactorService reluFactorService;
 
-    public AnalysisController(NewsAnalysisService newsAnalysisService) {
+    public AnalysisController(NewsAnalysisService newsAnalysisService, ReluFactorService reluFactorService) {
         this.newsAnalysisService = newsAnalysisService;
+        this.reluFactorService = reluFactorService;
     }
 
     @GetMapping("/demo")
@@ -35,5 +40,10 @@ public class AnalysisController {
     @PostMapping("/analyze")
     public AnalysisResponse analyze(@Valid @RequestBody AnalysisRequest request) {
         return newsAnalysisService.analyze(request);
+    }
+
+    @PostMapping("/relu-momentum")
+    public ReluResult calculateReluMomentum(@Valid @RequestBody ReluMomentumRequest request) {
+        return reluFactorService.calculate(request.closePrices(), request.threshold(), request.lookbackDays());
     }
 }

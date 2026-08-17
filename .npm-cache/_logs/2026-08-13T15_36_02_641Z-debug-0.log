@@ -1,0 +1,46 @@
+0 verbose cli D:\node\node.exe D:\node\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.8.2
+2 info using node@v20.19.0
+3 silly config load:file:D:\node\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\HP\.npmrc
+5 silly config load:file:C:\Users\HP\npm-global\etc\npmrc
+6 verbose title npm install pnpm@10.18.0
+7 verbose argv "install" "--global" "pnpm@10.18.0"
+8 verbose logfile logs-max:10 dir:e:\FactorX\.npm-cache\_logs\2026-08-13T15_36_02_641Z-
+9 verbose logfile e:\FactorX\.npm-cache\_logs\2026-08-13T15_36_02_641Z-debug-0.log
+10 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
+13 silly idealTree buildDeps
+14 silly fetch manifest pnpm@10.18.0
+15 silly packumentCache full:https://registry.npmmirror.com/pnpm cache-miss
+16 http fetch GET 200 https://registry.npmmirror.com/pnpm 322ms (cache miss)
+17 silly packumentCache full:https://registry.npmmirror.com/pnpm set size:675060 disposed:false
+18 silly placeDep ROOT pnpm@10.18.0 OK for:  want: 10.18.0
+19 silly reify mark retired [
+19 silly reify   'C:\\Users\\HP\\npm-global\\node_modules\\pnpm',
+19 silly reify   'C:\\Users\\HP\\npm-global\\pnpm',
+19 silly reify   'C:\\Users\\HP\\npm-global\\pnpm.cmd',
+19 silly reify   'C:\\Users\\HP\\npm-global\\pnpm.ps1',
+19 silly reify   'C:\\Users\\HP\\npm-global\\pnpx',
+19 silly reify   'C:\\Users\\HP\\npm-global\\pnpx.cmd',
+19 silly reify   'C:\\Users\\HP\\npm-global\\pnpx.ps1'
+19 silly reify ]
+20 silly reify moves {
+20 silly reify   'C:\\Users\\HP\\npm-global\\node_modules\\pnpm': 'C:\\Users\\HP\\npm-global\\node_modules\\.pnpm-s8XoUY97',
+20 silly reify   'C:\\Users\\HP\\npm-global\\pnpm': 'C:\\Users\\HP\\npm-global\\.pnpm-F7XwBxYC',
+20 silly reify   'C:\\Users\\HP\\npm-global\\pnpm.cmd': 'C:\\Users\\HP\\npm-global\\.pnpm.cmd-Avyltuod',
+20 silly reify   'C:\\Users\\HP\\npm-global\\pnpm.ps1': 'C:\\Users\\HP\\npm-global\\.pnpm.ps1-Z9ZAY4dX',
+20 silly reify   'C:\\Users\\HP\\npm-global\\pnpx': 'C:\\Users\\HP\\npm-global\\.pnpx-nSfrl9xx',
+20 silly reify   'C:\\Users\\HP\\npm-global\\pnpx.cmd': 'C:\\Users\\HP\\npm-global\\.pnpx.cmd-ouvEbcOq',
+20 silly reify   'C:\\Users\\HP\\npm-global\\pnpx.ps1': 'C:\\Users\\HP\\npm-global\\.pnpx.ps1-cytuJyCh'
+20 silly reify }
+21 silly tarball no local data for pnpm@https://registry.npmmirror.com/pnpm/-/pnpm-10.18.0.tgz. Extracting by manifest.
+22 http fetch GET 200 https://cdn.npmmirror.com/packages/pnpm/10.18.0/pnpm-10.18.0.tgz 1267ms (cache miss)
+23 silly CHANGE node_modules/pnpm
+24 verbose cwd F:\deepseek-harness-master\deepseek-harness-master
+25 verbose os Windows_NT 10.0.22631
+26 verbose node v20.19.0
+27 verbose npm  v10.8.2
+28 verbose exit 0
+29 info ok
