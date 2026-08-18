@@ -2,6 +2,7 @@ package com.factorx.service;
 
 import com.factorx.model.AnalysisRequest;
 import com.factorx.model.ExtractedEvent;
+import com.factorx.model.FactorScore;
 import com.factorx.model.StockImpact;
 import org.springframework.stereotype.Service;
 
@@ -11,34 +12,40 @@ import java.util.Locale;
 @Service
 public class ScoringService {
 
+    private static final double MARKET_CONFIRMATION_SCORE = 0.42;
+    private final ReluFactorService reluFactorService;
+
+    public ScoringService(ReluFactorService reluFactorService) {
+        this.reluFactorService = reluFactorService;
+    }
+
     public List<StockImpact> score(
             ExtractedEvent event,
             List<MatchedStock> matchedStocks,
-            ReluResult reluResult,
             AnalysisRequest request
     ) {
         String direction = detectDirection(request);
-        double eventScore = eventScore(event);
-        double sourceScore = event.sourceCredibility();
-        double reluScore = reluResult.momentumScore();
-        double marketConfirmationScore = 0.42;
 
         return matchedStocks.stream()
-                .map(stock -> toImpact(stock, direction, eventScore, sourceScore, reluScore, marketConfirmationScore))
+                .map(stock -> toImpact(stock, event, direction))
                 .toList();
     }
 
     private StockImpact toImpact(
             MatchedStock stock,
-            String direction,
-            double eventScore,
-            double sourceScore,
-            double reluScore,
-            double marketConfirmationScore
+            ExtractedEvent event,
+            String direction
     ) {
+        ReluResult reluResult = reluFactorService.calculate(stock);
+        List<FactorScore> factors = factors(event, stock, reluResult);
+        double eventScore = factor(factors, "事件综合评分").activation();
+        double sourceScore = factor(factors, "新闻源可信度").activation();
+        double relevanceScore = factor(factors, "股票关联度").activation();
+        double reluScore = factor(factors, "ReLU 动量").activation();
+        double marketConfirmationScore = factor(factors, "市场确认").activation();
         double finalImpactScore =
                 0.30 * eventScore
-                        + 0.25 * stock.relevance()
+                        + 0.25 * relevanceScore
                         + 0.20 * reluScore
                         + 0.15 * sourceScore
                         + 0.10 * marketConfirmationScore;
@@ -47,7 +54,7 @@ public class ScoringService {
         int probability = (int) Math.round(45 + finalImpactScore * 40);
         double lowMove = round(0.5 + finalImpactScore * 2);
         double highMove = round(lowMove + 1.5 + finalImpactScore * 3);
-        String prefix = "利空".equals(direction) ? "-" : "+";
+        String estimatedMove = estimatedMove(direction, lowMove, highMove);
 
         return new StockImpact(
                 stock.symbol(),
@@ -55,10 +62,71 @@ public class ScoringService {
                 stock.relation(),
                 direction,
                 Math.max(0, Math.min(100, probability)),
-                prefix + lowMove + "% ~ " + prefix + highMove + "%",
+                estimatedMove,
                 "3-10个交易日",
-                round(stock.relevance())
+                round(stock.relevance()),
+                round(finalImpactScore),
+                factors,
+                reluResult.momentum(),
+                reluResult.metrics()
         );
+    }
+
+    private List<FactorScore> factors(ExtractedEvent event, MatchedStock stock, ReluResult reluResult) {
+        FactorScore projectScale = factorScore("国际项目规模", projectScaleScore(event.projectAmountUsd()), 0.50, 0,
+                "基于事件提取的项目金额，使用对数压缩避免超大金额线性放大。" );
+        FactorScore source = factorScore("新闻源可信度", event.sourceCredibility(), 0.60, 0.15,
+                "基于新闻源可信度评分。" );
+        FactorScore companyClarity = factorScore("公司明确性", companyClarityScore(event), 0.50, 0,
+                "事件是否识别出明确的关联公司。" );
+        FactorScore industry = factorScore("行业景气", industryScore(event), 0.50, 0,
+                "基于行业是否明确；真实行业热度将在数据接入后替换。" );
+        FactorScore market = factorScore("市场确认", MARKET_CONFIRMATION_SCORE, 0.50, 0.10,
+                "MVP 暂无真实量价数据，使用保守的固定确认分。" );
+        FactorScore relevance = factorScore("股票关联度", stock.relevance(), 0.50, 0.25,
+                "基于股票匹配模块给出的业务、供应链或行业关联度。" );
+        FactorScore relu = factorScore("ReLU 动量", reluResult.momentumScore(), 0.50, 0.20,
+                "基于超过收益阈值的正向动量、持续性与平台风险。" );
+
+        double eventRawScore = clamp(
+                0.30 * projectScale.activation()
+                        + 0.20 * source.activation()
+                        + 0.20 * companyClarity.activation()
+                        + 0.15 * industry.activation()
+                        + 0.15 * market.activation()
+        );
+        FactorScore eventScore = factorScore("事件综合评分", eventRawScore, 0, 0.30,
+                "由项目规模、来源可信度、公司明确性、行业景气和市场确认聚合得出。" );
+
+        return List.of(projectScale, source, companyClarity, industry, market, relevance, relu, eventScore);
+    }
+
+    private FactorScore factor(String name, double rawScore, double threshold, double weight, String reason) {
+        return factorScore(name, rawScore, threshold, weight, reason);
+    }
+
+    private FactorScore factor(List<FactorScore> factors, String name) {
+        return factors.stream()
+                .filter(factor -> factor.name().equals(name))
+                .findFirst()
+                .orElseThrow(() -> new IllegalStateException("Missing factor: " + name));
+    }
+
+    private FactorScore factorScore(String name, double rawScore, double threshold, double weight, String reason) {
+        double normalizedRawScore = clamp(rawScore);
+        double activation = threshold >= 1 ? 0 : clamp(Math.max(0, normalizedRawScore - threshold) / (1 - threshold));
+        return new FactorScore(name, round(normalizedRawScore), threshold, round(activation), weight,
+                round(activation * weight), reason);
+    }
+
+    private String estimatedMove(String direction, double lowMove, double highMove) {
+        if ("利好".equals(direction)) {
+            return "+" + lowMove + "% ~ +" + highMove + "%";
+        }
+        if ("利空".equals(direction)) {
+            return "-" + lowMove + "% ~ -" + highMove + "%";
+        }
+        return "方向不明确";
     }
 
     private String detectDirection(AnalysisRequest request) {
@@ -72,18 +140,12 @@ public class ScoringService {
         return "中性";
     }
 
-    private double eventScore(ExtractedEvent event) {
-        double projectScaleScore = projectScaleScore(event.projectAmountUsd());
-        double companyRelevanceScore = event.companies().contains("待确认") ? 0.45 : 0.80;
-        double sectorHeatScore = "待确认".equals(event.sector()) ? 0.50 : 0.72;
-        double marketConfirmationScore = 0.42;
-        return clamp(
-                0.30 * projectScaleScore
-                        + 0.20 * event.sourceCredibility()
-                        + 0.20 * companyRelevanceScore
-                        + 0.15 * sectorHeatScore
-                        + 0.15 * marketConfirmationScore
-        );
+    private double companyClarityScore(ExtractedEvent event) {
+        return event.companies().contains("待确认") ? 0.45 : 0.80;
+    }
+
+    private double industryScore(ExtractedEvent event) {
+        return "待确认".equals(event.sector()) ? 0.50 : 0.72;
     }
 
     private double projectScaleScore(Long projectAmountUsd) {

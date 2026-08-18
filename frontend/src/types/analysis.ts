@@ -26,6 +26,20 @@ export type StockImpact = {
   estimatedMove: string;
   horizon: string;
   relevance: number;
+  finalImpactScore: number;
+  factors: FactorScore[];
+  reluMomentum: ReluMomentumPoint[];
+  reluMetrics: ReluMetrics;
+};
+
+export type FactorScore = {
+  name: string;
+  rawScore: number;
+  threshold: number;
+  activation: number;
+  weight: number;
+  contribution: number;
+  reason: string;
 };
 
 export type ReluMomentumPoint = {

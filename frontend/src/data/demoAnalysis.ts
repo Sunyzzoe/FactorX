@@ -1,5 +1,29 @@
 import type { AnalysisRequest, AnalysisResponse } from "../types/analysis";
 
+const demoReluMomentum = [
+  { day: 1, price: 100, returnPct: 0, cumulativeReturn: 0, reluReturn: 0, reluMomentum: 0 },
+  { day: 2, price: 101.2, returnPct: 1.19, cumulativeReturn: 1.19, reluReturn: 0.79, reluMomentum: 0.79 }
+];
+
+const demoReluMetrics = {
+  threshold: 0.004,
+  lookbackDays: 11,
+  reluSlope: 0.00797,
+  positiveDensity: 0.73,
+  plateauRatio: 0.27,
+  momentumPurity: 0.00425
+};
+
+const demoFactors = [
+  { name: "国际项目规模", rawScore: 0.88, threshold: 0.5, activation: 0.76, weight: 0, contribution: 0, reason: "项目金额较大，采用对数压缩。" },
+  { name: "新闻源可信度", rawScore: 0.86, threshold: 0.6, activation: 0.65, weight: 0.15, contribution: 0.1, reason: "权威媒体来源降低传播噪声。" },
+  { name: "股票关联度", rawScore: 0.91, threshold: 0.5, activation: 0.82, weight: 0.25, contribution: 0.21, reason: "公司与事件高度匹配。" },
+  { name: "行业景气", rawScore: 0.78, threshold: 0.5, activation: 0.56, weight: 0, contribution: 0, reason: "行业明确且受事件影响。" },
+  { name: "市场确认", rawScore: 0.42, threshold: 0.5, activation: 0, weight: 0.1, contribution: 0, reason: "尚未接入真实量价数据。" },
+  { name: "ReLU 动量", rawScore: 0.74, threshold: 0.5, activation: 0.48, weight: 0.2, contribution: 0.1, reason: "正向收益台阶连续出现。" },
+  { name: "事件综合评分", rawScore: 0.7, threshold: 0, activation: 0.7, weight: 0.3, contribution: 0.21, reason: "由事件层因子聚合得出。" }
+];
+
 export const demoInput: AnalysisRequest = {
   headline: "Saudi Arabia announces $10B solar storage project involving Tesla suppliers",
   source: "Reuters",
@@ -28,7 +52,11 @@ export const demoAnalysis: AnalysisResponse = {
       probability: 74,
       estimatedMove: "+2.0% ~ +5.5%",
       horizon: "3-10个交易日",
-      relevance: 0.91
+      relevance: 0.91,
+      finalImpactScore: 0.74,
+      factors: demoFactors,
+      reluMomentum: demoReluMomentum,
+      reluMetrics: demoReluMetrics
     },
     {
       symbol: "ENPH",
@@ -38,7 +66,11 @@ export const demoAnalysis: AnalysisResponse = {
       probability: 63,
       estimatedMove: "+1.1% ~ +3.8%",
       horizon: "3-10个交易日",
-      relevance: 0.72
+      relevance: 0.72,
+      finalImpactScore: 0.63,
+      factors: demoFactors,
+      reluMomentum: demoReluMomentum,
+      reluMetrics: demoReluMetrics
     },
     {
       symbol: "NVDA",
@@ -48,7 +80,11 @@ export const demoAnalysis: AnalysisResponse = {
       probability: 58,
       estimatedMove: "+0.8% ~ +2.9%",
       horizon: "3-10个交易日",
-      relevance: 0.61
+      relevance: 0.61,
+      finalImpactScore: 0.58,
+      factors: demoFactors,
+      reluMomentum: demoReluMomentum,
+      reluMetrics: demoReluMetrics
     }
   ],
   reluMomentum: [

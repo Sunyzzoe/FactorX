@@ -15,8 +15,8 @@ public class ReluFactorService {
 
     public static final double DEFAULT_THRESHOLD = 0.004;
 
-    public ReluResult calculate(List<MatchedStock> matchedStocks) {
-        double[] simulatedPrices = simulatedClosePrices(matchedStocks);
+    public ReluResult calculate(MatchedStock matchedStock) {
+        double[] simulatedPrices = simulatedClosePrices(matchedStock);
         List<BigDecimal> closePrices = Arrays.stream(simulatedPrices)
                 .mapToObj(BigDecimal::valueOf)
                 .toList();
@@ -98,8 +98,8 @@ public class ReluFactorService {
         }
     }
 
-    private double[] simulatedClosePrices(List<MatchedStock> matchedStocks) {
-        double relevance = matchedStocks.isEmpty() ? 0.6 : matchedStocks.get(0).relevance();
+    private double[] simulatedClosePrices(MatchedStock matchedStock) {
+        double relevance = matchedStock == null ? 0.6 : matchedStock.relevance();
         double lift = Math.max(0, relevance - 0.5);
         return new double[]{
                 100.0, 100.8 + lift, 102.0 + lift, 101.5 + lift,

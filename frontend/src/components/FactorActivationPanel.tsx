@@ -1,7 +1,7 @@
-import type { ReluFactor, StockImpact } from "../types/analysis";
+import type { FactorScore, StockImpact } from "../types/analysis";
 
 type FactorActivationPanelProps = {
-  factors: ReluFactor[];
+  factors: FactorScore[];
   selectedStock: StockImpact | null;
 };
 
@@ -31,6 +31,7 @@ export function FactorActivationPanel({ factors, selectedStock }: FactorActivati
                   <span>Raw {factor.rawScore.toFixed(2)}</span>
                   <span>Threshold {factor.threshold.toFixed(2)}</span>
                   <span>Activation {factor.activation.toFixed(2)}</span>
+                  {factor.weight > 0 ? <span>贡献 {factor.contribution.toFixed(2)}</span> : null}
                 </div>
                 <p>{factor.reason}</p>
               </div>

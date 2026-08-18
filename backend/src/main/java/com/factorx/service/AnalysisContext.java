@@ -55,7 +55,15 @@ public class AnalysisContext {
     }
 
     public List<ReluFactor> reluFactors() {
-        return reluResult == null ? List.of() : reluResult.factors();
+        return stockImpacts.isEmpty() ? List.of() : stockImpacts.get(0).factors().stream()
+                .map(factor -> new ReluFactor(
+                        factor.name(),
+                        factor.rawScore(),
+                        factor.threshold(),
+                        factor.activation(),
+                        factor.reason()
+                ))
+                .toList();
     }
 
     public ReluMetrics reluMetrics() {
