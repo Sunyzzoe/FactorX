@@ -78,3 +78,30 @@ export type AnalysisResponse = {
   explanation: string;
   riskNote: string;
 };
+
+export type NewsItem = {
+  id: number;
+  title: string;
+  source?: string;
+  sourceCode?: string;
+  url?: string;
+  body?: string;
+  language?: string;
+  region?: string;
+  sectorHint?: string;
+  publishedAt?: string;
+  fetchedAt?: string;
+  hash: string;
+  createdAt: string;
+  status: "RECEIVED" | "ANALYZING" | "ANALYZED" | "FAILED" | "DUPLICATE" | string;
+  retryCount: number;
+  lastError?: string;
+};
+
+export type NewsPage = {
+  content: NewsItem[];
+  page: number;
+  size: number;
+  totalElements: number;
+  totalPages: number;
+};

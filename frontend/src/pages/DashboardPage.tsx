@@ -5,12 +5,13 @@ import { ExplanationPanel } from "../components/ExplanationPanel";
 import { FactorActivationPanel } from "../components/FactorActivationPanel";
 import { formatAmount, formatPercent } from "../components/formatters";
 import { NewsInputPanel } from "../components/NewsInputPanel";
+import { NewsFeed } from "../components/NewsFeed";
 import { ReluMomentumChart } from "../components/ReluMomentumChart";
 import { RiskNotePanel } from "../components/RiskNotePanel";
 import { StockImpactPanel } from "../components/StockImpactPanel";
 import { TopBar } from "../components/TopBar";
 import { demoAnalysis, demoInput } from "../data/demoAnalysis";
-import type { AnalysisRequest, AnalysisResponse } from "../types/analysis";
+import type { AnalysisRequest, AnalysisResponse, NewsItem } from "../types/analysis";
 
 export function DashboardPage() {
   const [request, setRequest] = useState<AnalysisRequest>(demoInput);
@@ -60,6 +61,15 @@ export function DashboardPage() {
     setError(null);
   }
 
+  function handleSelectNews(item: NewsItem) {
+    setRequest({
+      headline: item.title,
+      source: item.source ?? item.sourceCode ?? "",
+      body: item.body ?? ""
+    });
+    setError(null);
+  }
+
   return (
     <main className="app-shell">
       <TopBar analysis={analysis} usingFallback={usingFallback} />
@@ -93,6 +103,8 @@ export function DashboardPage() {
           onSelect={setSelectedSymbol}
         />
       </section>
+
+      <NewsFeed onSelect={handleSelectNews} />
 
       <ReluMomentumChart
         data={selectedStock?.reluMomentum ?? analysis?.reluMomentum ?? []}

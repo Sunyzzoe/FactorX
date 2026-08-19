@@ -27,6 +27,11 @@ public class GlobalExceptionHandler {
         return badRequest("请求参数校验失败", Map.of());
     }
 
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ApiErrorResponse> handleIllegalArgument(IllegalArgumentException ex) {
+        return badRequest(ex.getMessage(), Map.of());
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiErrorResponse> handleUnexpected(Exception ex) {
         ApiErrorResponse body = new ApiErrorResponse(

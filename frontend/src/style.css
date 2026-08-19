@@ -277,6 +277,41 @@ textarea {
   font-size: 13px;
 }
 
+.news-feed-panel {
+  margin-top: 14px;
+}
+
+.news-feed-list {
+  display: grid;
+  gap: 8px;
+}
+
+.news-feed-item {
+  display: grid;
+  gap: 5px;
+  width: 100%;
+  border: 1px solid #1e2d44;
+  border-radius: 7px;
+  background: #060d17;
+  color: #dce8f6;
+  padding: 10px;
+  text-align: left;
+}
+
+.news-feed-item:hover {
+  border-color: #20c7aa;
+}
+
+.news-feed-item strong {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.news-feed-item span {
+  color: #8fa2ba;
+  font-size: 11px;
+}
+
 .empty-state {
   min-height: 118px;
   display: grid;
