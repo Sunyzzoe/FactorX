@@ -1,6 +1,8 @@
 package com.factorx.model;
 
 import java.util.List;
+import com.factorx.market.model.MarketConfirmation;
+import com.factorx.market.model.MarketIndicators;
 
 public record StockImpact(
         String symbol,
@@ -14,5 +16,8 @@ public record StockImpact(
         double finalImpactScore,
         List<FactorScore> factors,
         List<ReluMomentumPoint> reluMomentum,
-        ReluMetrics reluMetrics
+        ReluMetrics reluMetrics,
+        String marketDataStatus,
+        MarketIndicators marketData,
+        MarketConfirmation marketConfirmation
 ) {}

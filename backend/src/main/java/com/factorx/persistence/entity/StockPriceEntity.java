@@ -28,6 +28,9 @@ public class StockPriceEntity {
     @Column(name = "close_price", nullable = false, precision = 20, scale = 8)
     private BigDecimal closePrice;
 
+    @Column(name = "adjusted_close_price", precision = 20, scale = 8)
+    private BigDecimal adjustedClosePrice;
+
     private Long volume;
 
     @Column(name = "return_pct", precision = 12, scale = 8)
@@ -46,6 +49,7 @@ public class StockPriceEntity {
             String symbol,
             LocalDate tradeDate,
             BigDecimal closePrice,
+            BigDecimal adjustedClosePrice,
             Long volume,
             BigDecimal returnPct,
             String source
@@ -53,10 +57,18 @@ public class StockPriceEntity {
         this.symbol = symbol;
         this.tradeDate = tradeDate;
         this.closePrice = closePrice;
+        this.adjustedClosePrice = adjustedClosePrice;
         this.volume = volume;
         this.returnPct = returnPct;
         this.source = source;
         this.createdAt = Instant.now();
+    }
+
+    public StockPriceEntity(
+            String symbol, LocalDate tradeDate, BigDecimal closePrice,
+            Long volume, BigDecimal returnPct, String source
+    ) {
+        this(symbol, tradeDate, closePrice, closePrice, volume, returnPct, source);
     }
 
     public Long getId() {
@@ -75,6 +87,10 @@ public class StockPriceEntity {
         return closePrice;
     }
 
+    public BigDecimal getAdjustedClosePrice() {
+        return adjustedClosePrice;
+    }
+
     public Long getVolume() {
         return volume;
     }
@@ -89,5 +105,14 @@ public class StockPriceEntity {
 
     public Instant getCreatedAt() {
         return createdAt;
+    }
+
+    public void update(BigDecimal closePrice, BigDecimal adjustedClosePrice, Long volume,
+                       BigDecimal returnPct, String source) {
+        this.closePrice = closePrice;
+        this.adjustedClosePrice = adjustedClosePrice;
+        this.volume = volume;
+        this.returnPct = returnPct;
+        this.source = source;
     }
 }

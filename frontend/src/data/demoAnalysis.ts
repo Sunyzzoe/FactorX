@@ -56,7 +56,10 @@ export const demoAnalysis: AnalysisResponse = {
       finalImpactScore: 0.74,
       factors: demoFactors,
       reluMomentum: demoReluMomentum,
-      reluMetrics: demoReluMetrics
+      reluMetrics: demoReluMetrics,
+      marketDataStatus: "UNAVAILABLE",
+      marketData: null,
+      marketConfirmation: null
     },
     {
       symbol: "ENPH",
@@ -70,7 +73,10 @@ export const demoAnalysis: AnalysisResponse = {
       finalImpactScore: 0.63,
       factors: demoFactors,
       reluMomentum: demoReluMomentum,
-      reluMetrics: demoReluMetrics
+      reluMetrics: demoReluMetrics,
+      marketDataStatus: "UNAVAILABLE",
+      marketData: null,
+      marketConfirmation: null
     },
     {
       symbol: "NVDA",
@@ -84,7 +90,10 @@ export const demoAnalysis: AnalysisResponse = {
       finalImpactScore: 0.58,
       factors: demoFactors,
       reluMomentum: demoReluMomentum,
-      reluMetrics: demoReluMetrics
+      reluMetrics: demoReluMetrics,
+      marketDataStatus: "UNAVAILABLE",
+      marketData: null,
+      marketConfirmation: null
     }
   ],
   reluMomentum: [

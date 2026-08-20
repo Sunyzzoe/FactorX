@@ -57,11 +57,28 @@ export function StockImpactPanel({ stocks, selectedSymbol, onSelect }: StockImpa
           </div>
 
           {selectedStock ? (
-            <div className="selected-stock">
-              <Metric label="当前选中" value={selectedStock.symbol} />
-              <Metric label="周期" value={selectedStock.horizon} />
-              <Metric label="关联度" value={`${Math.round(selectedStock.relevance * 100)}%`} />
-            </div>
+            <>
+              <div className="selected-stock">
+                <Metric label="当前选中" value={selectedStock.symbol} />
+                <Metric label="周期" value={selectedStock.horizon} />
+                <Metric label="关联度" value={`${Math.round(selectedStock.relevance * 100)}%`} />
+                <Metric label="行情状态" value={marketStatus(selectedStock.marketDataStatus)} />
+                {selectedStock.marketData ? (
+                  <>
+                    <Metric label="1日收益" value={percent(selectedStock.marketData.return1d)} />
+                    <Metric label="量比" value={`${selectedStock.marketData.volumeRatio.toFixed(2)}x`} />
+                    <Metric label="20日波动" value={percent(selectedStock.marketData.annualizedVolatility)} />
+                    <Metric
+                      label="市场确认"
+                      value={`${Math.round((selectedStock.marketConfirmation?.score ?? 0) * 100)}%`}
+                    />
+                  </>
+                ) : null}
+              </div>
+              {selectedStock.marketConfirmation?.riskNote ? (
+                <p className="market-risk">{selectedStock.marketConfirmation.riskNote}</p>
+              ) : null}
+            </>
           ) : null}
         </>
       ) : (
@@ -69,6 +86,16 @@ export function StockImpactPanel({ stocks, selectedSymbol, onSelect }: StockImpa
       )}
     </section>
   );
+}
+
+function marketStatus(status: string) {
+  if (status === "AVAILABLE") return "已接入";
+  if (status === "INSUFFICIENT_DATA") return "数据不足";
+  return "不可用";
+}
+
+function percent(value: number) {
+  return `${(value * 100).toFixed(2)}%`;
 }
 
 function Metric({ label, value }: { label: string; value: string }) {

@@ -604,3 +604,8 @@ textarea {
     min-width: 680px;
   }
 }
+.market-risk {
+  margin: 12px 0 0;
+  color: #a65b32;
+  font-size: 12px;
+}

@@ -4,7 +4,12 @@ import com.factorx.model.AnalysisRequest;
 import com.factorx.model.ExtractedEvent;
 import com.factorx.model.FactorScore;
 import com.factorx.model.StockImpact;
+import com.factorx.market.MarketDataService;
+import com.factorx.market.model.MarketConfirmation;
+import com.factorx.market.model.MarketIndicators;
+import com.factorx.market.model.MarketSnapshot;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Locale;
@@ -12,11 +17,18 @@ import java.util.Locale;
 @Service
 public class ScoringService {
 
-    private static final double MARKET_CONFIRMATION_SCORE = 0.42;
     private final ReluFactorService reluFactorService;
+    private final MarketDataService marketDataService;
 
     public ScoringService(ReluFactorService reluFactorService) {
         this.reluFactorService = reluFactorService;
+        this.marketDataService = (symbol, sector, direction) -> com.factorx.market.model.MarketSnapshot.unavailable();
+    }
+
+    @Autowired
+    public ScoringService(ReluFactorService reluFactorService, MarketDataService marketDataService) {
+        this.reluFactorService = reluFactorService;
+        this.marketDataService = marketDataService;
     }
 
     public List<StockImpact> score(
@@ -36,8 +48,10 @@ public class ScoringService {
             ExtractedEvent event,
             String direction
     ) {
-        ReluResult reluResult = reluFactorService.calculate(stock);
-        List<FactorScore> factors = factors(event, stock, reluResult);
+        MarketSnapshot market = marketDataService.analyze(stock.symbol(), event.sector(), direction);
+        ReluResult reluResult = market.reluResult() == null ? reluFactorService.calculate(stock) : market.reluResult();
+        double marketScore = market.confirmation() == null ? 0.42 : market.confirmation().score();
+        List<FactorScore> factors = factors(event, stock, reluResult, marketScore);
         double eventScore = factor(factors, "事件综合评分").activation();
         double sourceScore = factor(factors, "新闻源可信度").activation();
         double relevanceScore = factor(factors, "股票关联度").activation();
@@ -68,11 +82,14 @@ public class ScoringService {
                 round(finalImpactScore),
                 factors,
                 reluResult.momentum(),
-                reluResult.metrics()
+                reluResult.metrics(),
+                market.status(),
+                market.indicators(),
+                market.confirmation()
         );
     }
 
-    private List<FactorScore> factors(ExtractedEvent event, MatchedStock stock, ReluResult reluResult) {
+    private List<FactorScore> factors(ExtractedEvent event, MatchedStock stock, ReluResult reluResult, double marketConfirmationScore) {
         FactorScore projectScale = factorScore("国际项目规模", projectScaleScore(event.projectAmountUsd()), 0.50, 0,
                 "基于事件提取的项目金额，使用对数压缩避免超大金额线性放大。" );
         FactorScore source = factorScore("新闻源可信度", event.sourceCredibility(), 0.60, 0.15,
@@ -81,8 +98,8 @@ public class ScoringService {
                 "事件是否识别出明确的关联公司。" );
         FactorScore industry = factorScore("行业景气", industryScore(event), 0.50, 0,
                 "基于行业是否明确；真实行业热度将在数据接入后替换。" );
-        FactorScore market = factorScore("市场确认", MARKET_CONFIRMATION_SCORE, 0.50, 0.10,
-                "MVP 暂无真实量价数据，使用保守的固定确认分。" );
+        FactorScore market = factorScore("市场确认", marketConfirmationScore, 0.50, 0.10,
+                marketConfirmationScore == 0.42 ? "当前行情不可用，使用保守的默认确认分。" : "基于价格方向、成交量、行业 ETF 和波动率计算。" );
         FactorScore relevance = factorScore("股票关联度", stock.relevance(), 0.50, 0.25,
                 "基于股票匹配模块给出的业务、供应链或行业关联度。" );
         FactorScore relu = factorScore("ReLU 动量", reluResult.momentumScore(), 0.50, 0.20,

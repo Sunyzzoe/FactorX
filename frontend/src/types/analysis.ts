@@ -30,6 +30,30 @@ export type StockImpact = {
   factors: FactorScore[];
   reluMomentum: ReluMomentumPoint[];
   reluMetrics: ReluMetrics;
+  marketDataStatus: "AVAILABLE" | "INSUFFICIENT_DATA" | "UNAVAILABLE" | string;
+  marketData?: MarketIndicators | null;
+  marketConfirmation?: MarketConfirmation | null;
+};
+
+export type MarketIndicators = {
+  return1d: number;
+  return5d: number;
+  volume: number;
+  averageVolume20d: number;
+  volumeRatio: number;
+  volatility20d: number;
+  annualizedVolatility: number;
+};
+
+export type MarketConfirmation = {
+  score: number;
+  priceConfirmed: boolean;
+  volumeConfirmed: boolean;
+  sectorConfirmed: boolean;
+  conflict: boolean;
+  industryEtf?: string | null;
+  industryEtfReturn1d?: number | null;
+  riskNote?: string | null;
 };
 
 export type FactorScore = {

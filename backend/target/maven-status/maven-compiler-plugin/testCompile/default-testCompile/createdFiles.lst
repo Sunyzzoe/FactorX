@@ -1,1 +1,7 @@
+com\factorx\backtest\BacktestServiceTest.class
+com\factorx\news\NewsTextNormalizerTest.class
+com\factorx\service\ScoringServiceTest.class
+com\factorx\persistence\NewsContentHasherTest.class
 com\factorx\service\ReluFactorServiceTest.class
+com\factorx\market\FinnhubMarketDataProviderTest.class
+com\factorx\FactorXApplicationTest.class
